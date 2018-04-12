@@ -1,6 +1,7 @@
 server:
   port: 8080
 
+
 spring:
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
@@ -26,3 +27,21 @@ spring:
     loginUsername: jackson
     loginPassword: 123!@#
     resetEnable: false
+  mvc:
+    static-path-pattern: /**
+  resources:
+    static-locations: classpath:/META-INF/resources/,classpath:/resources/,classpath:/static/,classpath:/public/,file:${system.upload}
+
+system:
+  login:
+    limit: true # 是否开启登陆失败次数限制
+    captchaEnable: true # 是否开启验证码
+    retryCount: 5 #登录失败最大次数
+  upload: /Users/mitnick/company/upload/
+
+  security:
+     spring-session-open: false # 是否开启spring session 如果是多机环境需要开启 true ／false
+     session-invalidate-time: 1800000  #session 失效时间，只在单机环境下生效，多机环境在springSessionConfig类中配置
+     session-validation-interval: 900000 #多久检测一次失效的session
+     cookie-remember-me: 432000
+  maxSession: 1
