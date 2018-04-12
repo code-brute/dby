@@ -48,7 +48,7 @@ public class WechatAppLoginDOMImpl extends BaseDomain implements IWechatAppLogin
                 logger.debug("kwwl", "res {}" ,response.body().string());
             }
         } catch (IOException e) {
-            e.printStackTrace();
+            logger.error(e.getMessage(),e);
         }
     }
 
