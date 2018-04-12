@@ -21,6 +21,7 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<okHttp.version>3.10.0</okHttp.version>
 		<java.version>1.8</java.version>
 	</properties>
 
@@ -56,6 +57,13 @@
 		<dependency>
 			<groupId>org.apache.shiro</groupId>
 			<artifactId>shiro-quartz</artifactId>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/com.squareup.okhttp3/okhttp -->
+		<dependency>
+			<groupId>com.squareup.okhttp3</groupId>
+			<artifactId>okhttp</artifactId>
+			<version>${okHttp.version}</version>
 		</dependency>
 
 	</dependencies>
