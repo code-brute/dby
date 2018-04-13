@@ -34,9 +34,10 @@ public class WechatAppLoginResource extends BaseResource{
     @RequestMapping(value = "/wechat/login",
             method = RequestMethod.POST,
             produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<ResultBean> onLogin(@RequestParam(name = "code") String code){
+    public ResponseEntity<ResultBean> onLogin(@RequestParam(name = "code") String code,
+                                              @RequestParam(name = "nickName") String nickName){
         ResultBean resultBean = new ResultBean();
-        wechatAppLoginService.login(code);
+        wechatAppLoginService.login(code,nickName);
         JSONObject jsonObject = new JSONObject();
         jsonObject.put("sessionKey", "1342");
         resultBean.setData(jsonObject);

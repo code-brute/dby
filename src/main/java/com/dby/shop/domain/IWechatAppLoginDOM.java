@@ -9,6 +9,6 @@ import com.dby.shop.config.base.IDomain;
  */
 public interface IWechatAppLoginDOM extends IDomain{
 
-    String login(String code);
+    String login(String code,String nickName);
 
 }

@@ -27,7 +27,7 @@ public class WechatAppLoginServiceImpl extends BaseService implements IWechatApp
 
 
     @Override
-    public String login(String code) {
-        return wechatAppLoginDOM.login(code);
+    public String login(String code,String nickName) {
+        return wechatAppLoginDOM.login(code,nickName);
     }
 }

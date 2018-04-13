@@ -10,5 +10,5 @@ import com.dby.shop.config.base.IService;
  */
 public interface IWechatAppLoginService extends IService {
 
-    String login(String code);
+    String login(String code,String nickName);
 }

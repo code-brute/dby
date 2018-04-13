@@ -11,9 +11,9 @@ public class AppConfig extends Entity implements Serializable {
 
     private String sessionKey;
 
-    private String unionId;
+    private String appSession;
 
-    private Integer status;
+    private String unionId;
 
     private String lastModifyBy;
 
@@ -24,6 +24,10 @@ public class AppConfig extends Entity implements Serializable {
     private Date createDate;
 
     private String remarks;
+
+    private Integer status;
+
+    private String appCode;
 
     private static final long serialVersionUID = 1L;
 
@@ -51,20 +55,20 @@ public class AppConfig extends Entity implements Serializable {
         this.sessionKey = sessionKey;
     }
 
+    public String getAppSession() {
+        return appSession;
+    }
+
+    public void setAppSession(String appSession) {
+        this.appSession = appSession;
+    }
+
     public String getUnionId() {
         return unionId;
     }
 
     public void setUnionId(String unionId) {
         this.unionId = unionId;
-    }
-
-    public Integer getStatus() {
-        return status;
-    }
-
-    public void setStatus(Integer status) {
-        this.status = status;
     }
 
     public String getLastModifyBy() {
@@ -107,6 +111,22 @@ public class AppConfig extends Entity implements Serializable {
         this.remarks = remarks;
     }
 
+    public Integer getStatus() {
+        return status;
+    }
+
+    public void setStatus(Integer status) {
+        this.status = status;
+    }
+
+    public String getAppCode() {
+        return appCode;
+    }
+
+    public void setAppCode(String appCode) {
+        this.appCode = appCode;
+    }
+
     @Override
     public boolean equals(Object that) {
         if (this == that) {
@@ -122,13 +142,15 @@ public class AppConfig extends Entity implements Serializable {
         return (this.getId() == null ? other.getId() == null : this.getId().equals(other.getId()))
             && (this.getOpenId() == null ? other.getOpenId() == null : this.getOpenId().equals(other.getOpenId()))
             && (this.getSessionKey() == null ? other.getSessionKey() == null : this.getSessionKey().equals(other.getSessionKey()))
+            && (this.getAppSession() == null ? other.getAppSession() == null : this.getAppSession().equals(other.getAppSession()))
             && (this.getUnionId() == null ? other.getUnionId() == null : this.getUnionId().equals(other.getUnionId()))
-            && (this.getStatus() == null ? other.getStatus() == null : this.getStatus().equals(other.getStatus()))
             && (this.getLastModifyBy() == null ? other.getLastModifyBy() == null : this.getLastModifyBy().equals(other.getLastModifyBy()))
             && (this.getLastModifyDate() == null ? other.getLastModifyDate() == null : this.getLastModifyDate().equals(other.getLastModifyDate()))
             && (this.getCreateBy() == null ? other.getCreateBy() == null : this.getCreateBy().equals(other.getCreateBy()))
             && (this.getCreateDate() == null ? other.getCreateDate() == null : this.getCreateDate().equals(other.getCreateDate()))
-            && (this.getRemarks() == null ? other.getRemarks() == null : this.getRemarks().equals(other.getRemarks()));
+            && (this.getRemarks() == null ? other.getRemarks() == null : this.getRemarks().equals(other.getRemarks()))
+            && (this.getStatus() == null ? other.getStatus() == null : this.getStatus().equals(other.getStatus()))
+            && (this.getAppCode() == null ? other.getAppCode() == null : this.getAppCode().equals(other.getAppCode()));
     }
 
     @Override
@@ -138,13 +160,15 @@ public class AppConfig extends Entity implements Serializable {
         result = prime * result + ((getId() == null) ? 0 : getId().hashCode());
         result = prime * result + ((getOpenId() == null) ? 0 : getOpenId().hashCode());
         result = prime * result + ((getSessionKey() == null) ? 0 : getSessionKey().hashCode());
+        result = prime * result + ((getAppSession() == null) ? 0 : getAppSession().hashCode());
         result = prime * result + ((getUnionId() == null) ? 0 : getUnionId().hashCode());
-        result = prime * result + ((getStatus() == null) ? 0 : getStatus().hashCode());
         result = prime * result + ((getLastModifyBy() == null) ? 0 : getLastModifyBy().hashCode());
         result = prime * result + ((getLastModifyDate() == null) ? 0 : getLastModifyDate().hashCode());
         result = prime * result + ((getCreateBy() == null) ? 0 : getCreateBy().hashCode());
         result = prime * result + ((getCreateDate() == null) ? 0 : getCreateDate().hashCode());
         result = prime * result + ((getRemarks() == null) ? 0 : getRemarks().hashCode());
+        result = prime * result + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        result = prime * result + ((getAppCode() == null) ? 0 : getAppCode().hashCode());
         return result;
     }
 
@@ -157,13 +181,15 @@ public class AppConfig extends Entity implements Serializable {
         sb.append(", id=").append(id);
         sb.append(", openId=").append(openId);
         sb.append(", sessionKey=").append(sessionKey);
+        sb.append(", appSession=").append(appSession);
         sb.append(", unionId=").append(unionId);
-        sb.append(", status=").append(status);
         sb.append(", lastModifyBy=").append(lastModifyBy);
         sb.append(", lastModifyDate=").append(lastModifyDate);
         sb.append(", createBy=").append(createBy);
         sb.append(", createDate=").append(createDate);
         sb.append(", remarks=").append(remarks);
+        sb.append(", status=").append(status);
+        sb.append(", appCode=").append(appCode);
         sb.append(", serialVersionUID=").append(serialVersionUID);
         sb.append("]");
         return sb.toString();

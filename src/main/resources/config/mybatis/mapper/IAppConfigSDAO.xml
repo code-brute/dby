@@ -5,13 +5,15 @@
     <id column="ID" jdbcType="INTEGER" property="id" />
     <result column="OPEN_ID" jdbcType="VARCHAR" property="openId" />
     <result column="SESSION_KEY" jdbcType="VARCHAR" property="sessionKey" />
+    <result column="APP_SESSION" jdbcType="VARCHAR" property="appSession" />
     <result column="UNION_ID" jdbcType="VARCHAR" property="unionId" />
-    <result column="STATUS" jdbcType="INTEGER" property="status" />
     <result column="LAST_MODIFY_BY" jdbcType="VARCHAR" property="lastModifyBy" />
     <result column="LAST_MODIFY_DATE" jdbcType="TIMESTAMP" property="lastModifyDate" />
     <result column="CREATE_BY" jdbcType="VARCHAR" property="createBy" />
     <result column="CREATE_DATE" jdbcType="TIMESTAMP" property="createDate" />
     <result column="REMARKS" jdbcType="VARCHAR" property="remarks" />
+    <result column="STATUS" jdbcType="INTEGER" property="status" />
+    <result column="APP_CODE" jdbcType="VARCHAR" property="appCode" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -72,8 +74,8 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    ID, OPEN_ID, SESSION_KEY, UNION_ID, STATUS, LAST_MODIFY_BY, LAST_MODIFY_DATE, CREATE_BY, 
-    CREATE_DATE, REMARKS
+    ID, OPEN_ID, SESSION_KEY, APP_SESSION, UNION_ID, LAST_MODIFY_BY, LAST_MODIFY_DATE, 
+    CREATE_BY, CREATE_DATE, REMARKS, STATUS, APP_CODE
   </sql>
   <select id="selectByExample" parameterType="com.dby.shop.entity.AppConfigExample" resultMap="BaseResultMap">
     select
@@ -106,14 +108,14 @@
     </if>
   </delete>
   <insert id="insert" keyColumn="ID" keyProperty="id" parameterType="com.dby.shop.entity.AppConfig" useGeneratedKeys="true">
-    insert into APP_CONFIG (OPEN_ID, SESSION_KEY, UNION_ID, 
-      STATUS, LAST_MODIFY_BY, LAST_MODIFY_DATE, 
-      CREATE_BY, CREATE_DATE, REMARKS
-      )
-    values (#{openId,jdbcType=VARCHAR}, #{sessionKey,jdbcType=VARCHAR}, #{unionId,jdbcType=VARCHAR}, 
-      #{status,jdbcType=INTEGER}, #{lastModifyBy,jdbcType=VARCHAR}, #{lastModifyDate,jdbcType=TIMESTAMP}, 
-      #{createBy,jdbcType=VARCHAR}, #{createDate,jdbcType=TIMESTAMP}, #{remarks,jdbcType=VARCHAR}
-      )
+    insert into APP_CONFIG (OPEN_ID, SESSION_KEY, APP_SESSION, 
+      UNION_ID, LAST_MODIFY_BY, LAST_MODIFY_DATE, 
+      CREATE_BY, CREATE_DATE, REMARKS, 
+      STATUS, APP_CODE)
+    values (#{openId,jdbcType=VARCHAR}, #{sessionKey,jdbcType=VARCHAR}, #{appSession,jdbcType=VARCHAR}, 
+      #{unionId,jdbcType=VARCHAR}, #{lastModifyBy,jdbcType=VARCHAR}, #{lastModifyDate,jdbcType=TIMESTAMP}, 
+      #{createBy,jdbcType=VARCHAR}, #{createDate,jdbcType=TIMESTAMP}, #{remarks,jdbcType=VARCHAR}, 
+      #{status,jdbcType=INTEGER}, #{appCode,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" keyColumn="ID" keyProperty="id" parameterType="com.dby.shop.entity.AppConfig" useGeneratedKeys="true">
     insert into APP_CONFIG
@@ -124,11 +126,11 @@
       <if test="sessionKey != null">
         SESSION_KEY,
       </if>
+      <if test="appSession != null">
+        APP_SESSION,
+      </if>
       <if test="unionId != null">
         UNION_ID,
-      </if>
-      <if test="status != null">
-        STATUS,
       </if>
       <if test="lastModifyBy != null">
         LAST_MODIFY_BY,
@@ -145,6 +147,12 @@
       <if test="remarks != null">
         REMARKS,
       </if>
+      <if test="status != null">
+        STATUS,
+      </if>
+      <if test="appCode != null">
+        APP_CODE,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="openId != null">
@@ -153,11 +161,11 @@
       <if test="sessionKey != null">
         #{sessionKey,jdbcType=VARCHAR},
       </if>
+      <if test="appSession != null">
+        #{appSession,jdbcType=VARCHAR},
+      </if>
       <if test="unionId != null">
         #{unionId,jdbcType=VARCHAR},
-      </if>
-      <if test="status != null">
-        #{status,jdbcType=INTEGER},
       </if>
       <if test="lastModifyBy != null">
         #{lastModifyBy,jdbcType=VARCHAR},
@@ -173,6 +181,12 @@
       </if>
       <if test="remarks != null">
         #{remarks,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=INTEGER},
+      </if>
+      <if test="appCode != null">
+        #{appCode,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
@@ -194,11 +208,11 @@
       <if test="record.sessionKey != null">
         SESSION_KEY = #{record.sessionKey,jdbcType=VARCHAR},
       </if>
+      <if test="record.appSession != null">
+        APP_SESSION = #{record.appSession,jdbcType=VARCHAR},
+      </if>
       <if test="record.unionId != null">
         UNION_ID = #{record.unionId,jdbcType=VARCHAR},
-      </if>
-      <if test="record.status != null">
-        STATUS = #{record.status,jdbcType=INTEGER},
       </if>
       <if test="record.lastModifyBy != null">
         LAST_MODIFY_BY = #{record.lastModifyBy,jdbcType=VARCHAR},
@@ -215,6 +229,12 @@
       <if test="record.remarks != null">
         REMARKS = #{record.remarks,jdbcType=VARCHAR},
       </if>
+      <if test="record.status != null">
+        STATUS = #{record.status,jdbcType=INTEGER},
+      </if>
+      <if test="record.appCode != null">
+        APP_CODE = #{record.appCode,jdbcType=VARCHAR},
+      </if>
     </set>
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
@@ -225,13 +245,15 @@
     set ID = #{record.id,jdbcType=INTEGER},
       OPEN_ID = #{record.openId,jdbcType=VARCHAR},
       SESSION_KEY = #{record.sessionKey,jdbcType=VARCHAR},
+      APP_SESSION = #{record.appSession,jdbcType=VARCHAR},
       UNION_ID = #{record.unionId,jdbcType=VARCHAR},
-      STATUS = #{record.status,jdbcType=INTEGER},
       LAST_MODIFY_BY = #{record.lastModifyBy,jdbcType=VARCHAR},
       LAST_MODIFY_DATE = #{record.lastModifyDate,jdbcType=TIMESTAMP},
       CREATE_BY = #{record.createBy,jdbcType=VARCHAR},
       CREATE_DATE = #{record.createDate,jdbcType=TIMESTAMP},
-      REMARKS = #{record.remarks,jdbcType=VARCHAR}
+      REMARKS = #{record.remarks,jdbcType=VARCHAR},
+      STATUS = #{record.status,jdbcType=INTEGER},
+      APP_CODE = #{record.appCode,jdbcType=VARCHAR}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -245,11 +267,11 @@
       <if test="sessionKey != null">
         SESSION_KEY = #{sessionKey,jdbcType=VARCHAR},
       </if>
+      <if test="appSession != null">
+        APP_SESSION = #{appSession,jdbcType=VARCHAR},
+      </if>
       <if test="unionId != null">
         UNION_ID = #{unionId,jdbcType=VARCHAR},
-      </if>
-      <if test="status != null">
-        STATUS = #{status,jdbcType=INTEGER},
       </if>
       <if test="lastModifyBy != null">
         LAST_MODIFY_BY = #{lastModifyBy,jdbcType=VARCHAR},
@@ -266,6 +288,12 @@
       <if test="remarks != null">
         REMARKS = #{remarks,jdbcType=VARCHAR},
       </if>
+      <if test="status != null">
+        STATUS = #{status,jdbcType=INTEGER},
+      </if>
+      <if test="appCode != null">
+        APP_CODE = #{appCode,jdbcType=VARCHAR},
+      </if>
     </set>
     where ID = #{id,jdbcType=INTEGER}
   </update>
@@ -273,13 +301,15 @@
     update APP_CONFIG
     set OPEN_ID = #{openId,jdbcType=VARCHAR},
       SESSION_KEY = #{sessionKey,jdbcType=VARCHAR},
+      APP_SESSION = #{appSession,jdbcType=VARCHAR},
       UNION_ID = #{unionId,jdbcType=VARCHAR},
-      STATUS = #{status,jdbcType=INTEGER},
       LAST_MODIFY_BY = #{lastModifyBy,jdbcType=VARCHAR},
       LAST_MODIFY_DATE = #{lastModifyDate,jdbcType=TIMESTAMP},
       CREATE_BY = #{createBy,jdbcType=VARCHAR},
       CREATE_DATE = #{createDate,jdbcType=TIMESTAMP},
-      REMARKS = #{remarks,jdbcType=VARCHAR}
+      REMARKS = #{remarks,jdbcType=VARCHAR},
+      STATUS = #{status,jdbcType=INTEGER},
+      APP_CODE = #{appCode,jdbcType=VARCHAR}
     where ID = #{id,jdbcType=INTEGER}
   </update>
 </mapper>

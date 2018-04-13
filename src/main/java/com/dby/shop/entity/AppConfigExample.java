@@ -305,6 +305,76 @@ public class AppConfigExample {
             return (Criteria) this;
         }
 
+        public Criteria andAppSessionIsNull() {
+            addCriterion("APP_SESSION is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andAppSessionIsNotNull() {
+            addCriterion("APP_SESSION is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andAppSessionEqualTo(String value) {
+            addCriterion("APP_SESSION =", value, "appSession");
+            return (Criteria) this;
+        }
+
+        public Criteria andAppSessionNotEqualTo(String value) {
+            addCriterion("APP_SESSION <>", value, "appSession");
+            return (Criteria) this;
+        }
+
+        public Criteria andAppSessionGreaterThan(String value) {
+            addCriterion("APP_SESSION >", value, "appSession");
+            return (Criteria) this;
+        }
+
+        public Criteria andAppSessionGreaterThanOrEqualTo(String value) {
+            addCriterion("APP_SESSION >=", value, "appSession");
+            return (Criteria) this;
+        }
+
+        public Criteria andAppSessionLessThan(String value) {
+            addCriterion("APP_SESSION <", value, "appSession");
+            return (Criteria) this;
+        }
+
+        public Criteria andAppSessionLessThanOrEqualTo(String value) {
+            addCriterion("APP_SESSION <=", value, "appSession");
+            return (Criteria) this;
+        }
+
+        public Criteria andAppSessionLike(String value) {
+            addCriterion("APP_SESSION like", value, "appSession");
+            return (Criteria) this;
+        }
+
+        public Criteria andAppSessionNotLike(String value) {
+            addCriterion("APP_SESSION not like", value, "appSession");
+            return (Criteria) this;
+        }
+
+        public Criteria andAppSessionIn(List<String> values) {
+            addCriterion("APP_SESSION in", values, "appSession");
+            return (Criteria) this;
+        }
+
+        public Criteria andAppSessionNotIn(List<String> values) {
+            addCriterion("APP_SESSION not in", values, "appSession");
+            return (Criteria) this;
+        }
+
+        public Criteria andAppSessionBetween(String value1, String value2) {
+            addCriterion("APP_SESSION between", value1, value2, "appSession");
+            return (Criteria) this;
+        }
+
+        public Criteria andAppSessionNotBetween(String value1, String value2) {
+            addCriterion("APP_SESSION not between", value1, value2, "appSession");
+            return (Criteria) this;
+        }
+
         public Criteria andUnionIdIsNull() {
             addCriterion("UNION_ID is null");
             return (Criteria) this;
@@ -372,66 +442,6 @@ public class AppConfigExample {
 
         public Criteria andUnionIdNotBetween(String value1, String value2) {
             addCriterion("UNION_ID not between", value1, value2, "unionId");
-            return (Criteria) this;
-        }
-
-        public Criteria andStatusIsNull() {
-            addCriterion("STATUS is null");
-            return (Criteria) this;
-        }
-
-        public Criteria andStatusIsNotNull() {
-            addCriterion("STATUS is not null");
-            return (Criteria) this;
-        }
-
-        public Criteria andStatusEqualTo(Integer value) {
-            addCriterion("STATUS =", value, "status");
-            return (Criteria) this;
-        }
-
-        public Criteria andStatusNotEqualTo(Integer value) {
-            addCriterion("STATUS <>", value, "status");
-            return (Criteria) this;
-        }
-
-        public Criteria andStatusGreaterThan(Integer value) {
-            addCriterion("STATUS >", value, "status");
-            return (Criteria) this;
-        }
-
-        public Criteria andStatusGreaterThanOrEqualTo(Integer value) {
-            addCriterion("STATUS >=", value, "status");
-            return (Criteria) this;
-        }
-
-        public Criteria andStatusLessThan(Integer value) {
-            addCriterion("STATUS <", value, "status");
-            return (Criteria) this;
-        }
-
-        public Criteria andStatusLessThanOrEqualTo(Integer value) {
-            addCriterion("STATUS <=", value, "status");
-            return (Criteria) this;
-        }
-
-        public Criteria andStatusIn(List<Integer> values) {
-            addCriterion("STATUS in", values, "status");
-            return (Criteria) this;
-        }
-
-        public Criteria andStatusNotIn(List<Integer> values) {
-            addCriterion("STATUS not in", values, "status");
-            return (Criteria) this;
-        }
-
-        public Criteria andStatusBetween(Integer value1, Integer value2) {
-            addCriterion("STATUS between", value1, value2, "status");
-            return (Criteria) this;
-        }
-
-        public Criteria andStatusNotBetween(Integer value1, Integer value2) {
-            addCriterion("STATUS not between", value1, value2, "status");
             return (Criteria) this;
         }
 
@@ -762,6 +772,136 @@ public class AppConfigExample {
 
         public Criteria andRemarksNotBetween(String value1, String value2) {
             addCriterion("REMARKS not between", value1, value2, "remarks");
+            return (Criteria) this;
+        }
+
+        public Criteria andStatusIsNull() {
+            addCriterion("STATUS is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andStatusIsNotNull() {
+            addCriterion("STATUS is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andStatusEqualTo(Integer value) {
+            addCriterion("STATUS =", value, "status");
+            return (Criteria) this;
+        }
+
+        public Criteria andStatusNotEqualTo(Integer value) {
+            addCriterion("STATUS <>", value, "status");
+            return (Criteria) this;
+        }
+
+        public Criteria andStatusGreaterThan(Integer value) {
+            addCriterion("STATUS >", value, "status");
+            return (Criteria) this;
+        }
+
+        public Criteria andStatusGreaterThanOrEqualTo(Integer value) {
+            addCriterion("STATUS >=", value, "status");
+            return (Criteria) this;
+        }
+
+        public Criteria andStatusLessThan(Integer value) {
+            addCriterion("STATUS <", value, "status");
+            return (Criteria) this;
+        }
+
+        public Criteria andStatusLessThanOrEqualTo(Integer value) {
+            addCriterion("STATUS <=", value, "status");
+            return (Criteria) this;
+        }
+
+        public Criteria andStatusIn(List<Integer> values) {
+            addCriterion("STATUS in", values, "status");
+            return (Criteria) this;
+        }
+
+        public Criteria andStatusNotIn(List<Integer> values) {
+            addCriterion("STATUS not in", values, "status");
+            return (Criteria) this;
+        }
+
+        public Criteria andStatusBetween(Integer value1, Integer value2) {
+            addCriterion("STATUS between", value1, value2, "status");
+            return (Criteria) this;
+        }
+
+        public Criteria andStatusNotBetween(Integer value1, Integer value2) {
+            addCriterion("STATUS not between", value1, value2, "status");
+            return (Criteria) this;
+        }
+
+        public Criteria andAppCodeIsNull() {
+            addCriterion("APP_CODE is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andAppCodeIsNotNull() {
+            addCriterion("APP_CODE is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andAppCodeEqualTo(String value) {
+            addCriterion("APP_CODE =", value, "appCode");
+            return (Criteria) this;
+        }
+
+        public Criteria andAppCodeNotEqualTo(String value) {
+            addCriterion("APP_CODE <>", value, "appCode");
+            return (Criteria) this;
+        }
+
+        public Criteria andAppCodeGreaterThan(String value) {
+            addCriterion("APP_CODE >", value, "appCode");
+            return (Criteria) this;
+        }
+
+        public Criteria andAppCodeGreaterThanOrEqualTo(String value) {
+            addCriterion("APP_CODE >=", value, "appCode");
+            return (Criteria) this;
+        }
+
+        public Criteria andAppCodeLessThan(String value) {
+            addCriterion("APP_CODE <", value, "appCode");
+            return (Criteria) this;
+        }
+
+        public Criteria andAppCodeLessThanOrEqualTo(String value) {
+            addCriterion("APP_CODE <=", value, "appCode");
+            return (Criteria) this;
+        }
+
+        public Criteria andAppCodeLike(String value) {
+            addCriterion("APP_CODE like", value, "appCode");
+            return (Criteria) this;
+        }
+
+        public Criteria andAppCodeNotLike(String value) {
+            addCriterion("APP_CODE not like", value, "appCode");
+            return (Criteria) this;
+        }
+
+        public Criteria andAppCodeIn(List<String> values) {
+            addCriterion("APP_CODE in", values, "appCode");
+            return (Criteria) this;
+        }
+
+        public Criteria andAppCodeNotIn(List<String> values) {
+            addCriterion("APP_CODE not in", values, "appCode");
+            return (Criteria) this;
+        }
+
+        public Criteria andAppCodeBetween(String value1, String value2) {
+            addCriterion("APP_CODE between", value1, value2, "appCode");
+            return (Criteria) this;
+        }
+
+        public Criteria andAppCodeNotBetween(String value1, String value2) {
+            addCriterion("APP_CODE not between", value1, value2, "appCode");
             return (Criteria) this;
         }
     }
