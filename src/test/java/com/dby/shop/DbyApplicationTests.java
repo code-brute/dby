@@ -25,13 +25,13 @@ public class DbyApplicationTests {
 	@Test
 	public void contextLoads() {
 		String appid = "";
-		String secret = "";
+		String secret = "23bf305c11fa40a008ce08515dfc9678";
 		String jsCode = "";
 
 		SysConfig sysConfig = new SysConfig();
-		sysConfig.setPrpty("appid");
-		sysConfig.setPrptyValue(appid);
-		sysConfig.setPrptyName("小程序唯一标识");
+		sysConfig.setPrpty("secret");
+		sysConfig.setPrptyValue("23bf305c11fa40a008ce08515dfc9678");
+		sysConfig.setPrptyName("小程序的 app secret");
 		sysConfig.setStatus(AVAILABLE_DATA);
 		sysConfig.setCreateDate(dateNow());
 		sysConfig.setCreateBy("jackson");
