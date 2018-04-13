@@ -3,9 +3,8 @@ package com.dby.shop.web;
 import com.alibaba.fastjson.JSONObject;
 import com.dby.shop.config.base.BaseResource;
 import com.dby.shop.config.base.ResultBean;
-import com.dby.shop.service.IWechatAppLoginService;
+import com.dby.shop.service.IWechatAppService;
 
-import org.apache.ibatis.annotations.Param;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,12 +23,12 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RequestMapping("/api/app")
-public class WechatAppLoginResource extends BaseResource{
+public class WechatAppResource extends BaseResource{
 
-    private static Logger logger = LoggerFactory.getLogger(WechatAppLoginResource.class);
+    private static Logger logger = LoggerFactory.getLogger(WechatAppResource.class);
 
     @Autowired
-    IWechatAppLoginService wechatAppLoginService;
+    IWechatAppService wechatAppLoginService;
 
     @RequestMapping(value = "/wechat/login",
             method = RequestMethod.POST,

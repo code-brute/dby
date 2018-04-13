@@ -1,7 +1,13 @@
 package com.dby.shop.dao;
 
-import org.junit.Test;
+import com.dby.shop.DbyApplicationTests;
+import com.dby.shop.config.Constants;
+import com.dby.shop.entity.SysIndustry;
 
+import org.junit.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import static com.dby.shop.utils.common.DateUtil.dateNow;
 import static org.junit.Assert.*;
 
 /**
@@ -9,7 +15,11 @@ import static org.junit.Assert.*;
  * @author: mitnick
  * @date: 2018-04-13 下午12:40
  */
-public class ISysIndustrySDAOTest {
+public class ISysIndustrySDAOTest extends DbyApplicationTests{
+
+    @Autowired
+    private ISysIndustrySDAO sysIndustrySDAO;
+
     @Test
     public void countByExample() throws Exception {
     }
@@ -24,6 +34,15 @@ public class ISysIndustrySDAOTest {
 
     @Test
     public void insert() throws Exception {
+        SysIndustry sysIndustry = new SysIndustry();
+        sysIndustry.setName("");
+        sysIndustry.setStatus(Constants.AVAILABLE_DATA);
+        sysIndustry.setCreateBy("jackson");
+        sysIndustry.setCreateDate(dateNow());
+        sysIndustry.setLastModifyBy("jackson");
+        sysIndustry.setLastModifyDate(dateNow());
+        sysIndustrySDAO.insert(sysIndustry);
+
     }
 
     @Test

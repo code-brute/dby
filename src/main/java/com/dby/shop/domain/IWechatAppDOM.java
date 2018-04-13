@@ -7,7 +7,7 @@ import com.dby.shop.config.base.IDomain;
  * @author: mitnick
  * @date: 2018-04-12 下午2:36
  */
-public interface IWechatAppLoginDOM extends IDomain{
+public interface IWechatAppDOM extends IDomain{
 
     String login(String code,String nickName);
 

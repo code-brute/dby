@@ -1,20 +1,12 @@
 package com.dby.shop.dao;
 
 import com.dby.shop.DbyApplicationTests;
-import com.dby.shop.config.Constants;
-import com.dby.shop.domain.impl.WechatAppLoginDOMImpl;
 import com.dby.shop.entity.AppConfigExample;
-import com.dby.shop.entity.SysConfig;
-import com.dby.shop.entity.SysConfigExample;
 
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-
-import java.util.List;
-
-import static org.junit.Assert.*;
 
 /**
  * @Description:

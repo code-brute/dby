@@ -8,7 +8,7 @@ import com.dby.shop.config.base.IService;
  * @author: mitnick
  * @date: 2018-04-12 下午2:34
  */
-public interface IWechatAppLoginService extends IService {
+public interface IWechatAppService extends IService {
 
     String login(String code,String nickName);
 }

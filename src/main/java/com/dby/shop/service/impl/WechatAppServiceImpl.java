@@ -1,9 +1,8 @@
 package com.dby.shop.service.impl;
 
 import com.dby.shop.config.base.BaseService;
-import com.dby.shop.domain.IWechatAppLoginDOM;
-import com.dby.shop.service.IWechatAppLoginService;
-import com.dby.shop.web.WechatAppLoginResource;
+import com.dby.shop.domain.IWechatAppDOM;
+import com.dby.shop.service.IWechatAppService;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -18,12 +17,12 @@ import org.springframework.transaction.annotation.Transactional;
  */
 @Service
 @Transactional(rollbackFor = Exception.class)
-public class WechatAppLoginServiceImpl extends BaseService implements IWechatAppLoginService{
+public class WechatAppServiceImpl extends BaseService implements IWechatAppService {
 
-    private static Logger logger = LoggerFactory.getLogger(WechatAppLoginServiceImpl.class);
+    private static Logger logger = LoggerFactory.getLogger(WechatAppServiceImpl.class);
 
     @Autowired
-    IWechatAppLoginDOM wechatAppLoginDOM;
+    IWechatAppDOM wechatAppLoginDOM;
 
 
     @Override

@@ -6,7 +6,7 @@ import com.dby.shop.config.base.BaseDomain;
 import com.dby.shop.config.cache.CacheConstants;
 import com.dby.shop.dao.IAppConfigSDAO;
 import com.dby.shop.dao.ISysConfigSDAO;
-import com.dby.shop.domain.IWechatAppLoginDOM;
+import com.dby.shop.domain.IWechatAppDOM;
 import com.dby.shop.entity.AppConfig;
 import com.dby.shop.entity.AppConfigExample;
 import com.dby.shop.entity.SysConfig;
@@ -18,7 +18,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.io.IOException;
 import java.util.List;
@@ -37,10 +36,10 @@ import static com.dby.shop.utils.common.Encrypt.encrypt;
  * @date: 2018-04-12 下午2:36
  */
 @Component
-public class WechatAppLoginDOMImpl extends BaseDomain implements IWechatAppLoginDOM {
+public class WechatAppDOMImpl extends BaseDomain implements IWechatAppDOM {
 
 
-    private static Logger logger = LoggerFactory.getLogger(WechatAppLoginDOMImpl.class);
+    private static Logger logger = LoggerFactory.getLogger(WechatAppDOMImpl.class);
 
     @Autowired
     private IAppConfigSDAO appConfigSDAO;
