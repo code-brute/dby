@@ -1,0 +1,570 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dby.shop.dao.ISysUserSDAO">
+  <resultMap id="BaseResultMap" type="com.dby.shop.entity.SysUser">
+    <id column="ID" jdbcType="INTEGER" property="id" />
+    <result column="LOGIN_NAME" jdbcType="VARCHAR" property="loginName" />
+    <result column="CPMPANY_MAIL" jdbcType="VARCHAR" property="cpmpanyMail" />
+    <result column="CPMPANY_ADDRESS" jdbcType="VARCHAR" property="cpmpanyAddress" />
+    <result column="CPMPANY_PHONE" jdbcType="VARCHAR" property="cpmpanyPhone" />
+    <result column="CPMPANY_NAME" jdbcType="VARCHAR" property="cpmpanyName" />
+    <result column="INDUSTRY" jdbcType="INTEGER" property="industry" />
+    <result column="CONTACT_MAIL" jdbcType="VARCHAR" property="contactMail" />
+    <result column="CONTACT_PHONE" jdbcType="VARCHAR" property="contactPhone" />
+    <result column="CONTACT_NAME" jdbcType="VARCHAR" property="contactName" />
+    <result column="STORE_NAME" jdbcType="VARCHAR" property="storeName" />
+    <result column="DOOR_HEAD_PHOTO" jdbcType="VARCHAR" property="doorHeadPhoto" />
+    <result column="CHECKOUT_COUNTER_PHOTO" jdbcType="VARCHAR" property="checkoutCounterPhoto" />
+    <result column="BUSINESS_LICENSE_PHOTO" jdbcType="VARCHAR" property="businessLicensePhoto" />
+    <result column="USER_TYPE" jdbcType="INTEGER" property="userType" />
+    <result column="BUSINESS_HOURS" jdbcType="VARCHAR" property="businessHours" />
+    <result column="STATUS" jdbcType="INTEGER" property="status" />
+    <result column="PASSWORD" jdbcType="VARCHAR" property="password" />
+    <result column="SALT" jdbcType="VARCHAR" property="salt" />
+    <result column="PWD_SET_TIME" jdbcType="TIMESTAMP" property="pwdSetTime" />
+    <result column="PWD_INACTIVE_TIME" jdbcType="TIMESTAMP" property="pwdInactiveTime" />
+    <result column="LAST_PWD" jdbcType="VARCHAR" property="lastPwd" />
+    <result column="INIT_PWD_FLAG" jdbcType="INTEGER" property="initPwdFlag" />
+    <result column="LAST_MODIFY_BY" jdbcType="VARCHAR" property="lastModifyBy" />
+    <result column="LAST_MODIFY_DATE" jdbcType="TIMESTAMP" property="lastModifyDate" />
+    <result column="CREATE_BY" jdbcType="VARCHAR" property="createBy" />
+    <result column="CREATE_DATE" jdbcType="TIMESTAMP" property="createDate" />
+    <result column="REMARKS" jdbcType="VARCHAR" property="remarks" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    ID, LOGIN_NAME, CPMPANY_MAIL, CPMPANY_ADDRESS, CPMPANY_PHONE, CPMPANY_NAME, INDUSTRY, 
+    CONTACT_MAIL, CONTACT_PHONE, CONTACT_NAME, STORE_NAME, DOOR_HEAD_PHOTO, CHECKOUT_COUNTER_PHOTO, 
+    BUSINESS_LICENSE_PHOTO, USER_TYPE, BUSINESS_HOURS, STATUS, PASSWORD, SALT, PWD_SET_TIME, 
+    PWD_INACTIVE_TIME, LAST_PWD, INIT_PWD_FLAG, LAST_MODIFY_BY, LAST_MODIFY_DATE, CREATE_BY, 
+    CREATE_DATE, REMARKS
+  </sql>
+  <select id="selectByExample" parameterType="com.dby.shop.entity.SysUserExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from SYS_USER
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from SYS_USER
+    where ID = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from SYS_USER
+    where ID = #{id,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.dby.shop.entity.SysUserExample">
+    delete from SYS_USER
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" keyColumn="ID" keyProperty="id" parameterType="com.dby.shop.entity.SysUser" useGeneratedKeys="true">
+    insert into SYS_USER (LOGIN_NAME, CPMPANY_MAIL, CPMPANY_ADDRESS, 
+      CPMPANY_PHONE, CPMPANY_NAME, INDUSTRY, 
+      CONTACT_MAIL, CONTACT_PHONE, CONTACT_NAME, 
+      STORE_NAME, DOOR_HEAD_PHOTO, CHECKOUT_COUNTER_PHOTO, 
+      BUSINESS_LICENSE_PHOTO, USER_TYPE, BUSINESS_HOURS, 
+      STATUS, PASSWORD, SALT, 
+      PWD_SET_TIME, PWD_INACTIVE_TIME, LAST_PWD, 
+      INIT_PWD_FLAG, LAST_MODIFY_BY, LAST_MODIFY_DATE, 
+      CREATE_BY, CREATE_DATE, REMARKS
+      )
+    values (#{loginName,jdbcType=VARCHAR}, #{cpmpanyMail,jdbcType=VARCHAR}, #{cpmpanyAddress,jdbcType=VARCHAR}, 
+      #{cpmpanyPhone,jdbcType=VARCHAR}, #{cpmpanyName,jdbcType=VARCHAR}, #{industry,jdbcType=INTEGER}, 
+      #{contactMail,jdbcType=VARCHAR}, #{contactPhone,jdbcType=VARCHAR}, #{contactName,jdbcType=VARCHAR}, 
+      #{storeName,jdbcType=VARCHAR}, #{doorHeadPhoto,jdbcType=VARCHAR}, #{checkoutCounterPhoto,jdbcType=VARCHAR}, 
+      #{businessLicensePhoto,jdbcType=VARCHAR}, #{userType,jdbcType=INTEGER}, #{businessHours,jdbcType=VARCHAR}, 
+      #{status,jdbcType=INTEGER}, #{password,jdbcType=VARCHAR}, #{salt,jdbcType=VARCHAR}, 
+      #{pwdSetTime,jdbcType=TIMESTAMP}, #{pwdInactiveTime,jdbcType=TIMESTAMP}, #{lastPwd,jdbcType=VARCHAR}, 
+      #{initPwdFlag,jdbcType=INTEGER}, #{lastModifyBy,jdbcType=VARCHAR}, #{lastModifyDate,jdbcType=TIMESTAMP}, 
+      #{createBy,jdbcType=VARCHAR}, #{createDate,jdbcType=TIMESTAMP}, #{remarks,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" keyColumn="ID" keyProperty="id" parameterType="com.dby.shop.entity.SysUser" useGeneratedKeys="true">
+    insert into SYS_USER
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="loginName != null">
+        LOGIN_NAME,
+      </if>
+      <if test="cpmpanyMail != null">
+        CPMPANY_MAIL,
+      </if>
+      <if test="cpmpanyAddress != null">
+        CPMPANY_ADDRESS,
+      </if>
+      <if test="cpmpanyPhone != null">
+        CPMPANY_PHONE,
+      </if>
+      <if test="cpmpanyName != null">
+        CPMPANY_NAME,
+      </if>
+      <if test="industry != null">
+        INDUSTRY,
+      </if>
+      <if test="contactMail != null">
+        CONTACT_MAIL,
+      </if>
+      <if test="contactPhone != null">
+        CONTACT_PHONE,
+      </if>
+      <if test="contactName != null">
+        CONTACT_NAME,
+      </if>
+      <if test="storeName != null">
+        STORE_NAME,
+      </if>
+      <if test="doorHeadPhoto != null">
+        DOOR_HEAD_PHOTO,
+      </if>
+      <if test="checkoutCounterPhoto != null">
+        CHECKOUT_COUNTER_PHOTO,
+      </if>
+      <if test="businessLicensePhoto != null">
+        BUSINESS_LICENSE_PHOTO,
+      </if>
+      <if test="userType != null">
+        USER_TYPE,
+      </if>
+      <if test="businessHours != null">
+        BUSINESS_HOURS,
+      </if>
+      <if test="status != null">
+        STATUS,
+      </if>
+      <if test="password != null">
+        PASSWORD,
+      </if>
+      <if test="salt != null">
+        SALT,
+      </if>
+      <if test="pwdSetTime != null">
+        PWD_SET_TIME,
+      </if>
+      <if test="pwdInactiveTime != null">
+        PWD_INACTIVE_TIME,
+      </if>
+      <if test="lastPwd != null">
+        LAST_PWD,
+      </if>
+      <if test="initPwdFlag != null">
+        INIT_PWD_FLAG,
+      </if>
+      <if test="lastModifyBy != null">
+        LAST_MODIFY_BY,
+      </if>
+      <if test="lastModifyDate != null">
+        LAST_MODIFY_DATE,
+      </if>
+      <if test="createBy != null">
+        CREATE_BY,
+      </if>
+      <if test="createDate != null">
+        CREATE_DATE,
+      </if>
+      <if test="remarks != null">
+        REMARKS,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="loginName != null">
+        #{loginName,jdbcType=VARCHAR},
+      </if>
+      <if test="cpmpanyMail != null">
+        #{cpmpanyMail,jdbcType=VARCHAR},
+      </if>
+      <if test="cpmpanyAddress != null">
+        #{cpmpanyAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="cpmpanyPhone != null">
+        #{cpmpanyPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="cpmpanyName != null">
+        #{cpmpanyName,jdbcType=VARCHAR},
+      </if>
+      <if test="industry != null">
+        #{industry,jdbcType=INTEGER},
+      </if>
+      <if test="contactMail != null">
+        #{contactMail,jdbcType=VARCHAR},
+      </if>
+      <if test="contactPhone != null">
+        #{contactPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="contactName != null">
+        #{contactName,jdbcType=VARCHAR},
+      </if>
+      <if test="storeName != null">
+        #{storeName,jdbcType=VARCHAR},
+      </if>
+      <if test="doorHeadPhoto != null">
+        #{doorHeadPhoto,jdbcType=VARCHAR},
+      </if>
+      <if test="checkoutCounterPhoto != null">
+        #{checkoutCounterPhoto,jdbcType=VARCHAR},
+      </if>
+      <if test="businessLicensePhoto != null">
+        #{businessLicensePhoto,jdbcType=VARCHAR},
+      </if>
+      <if test="userType != null">
+        #{userType,jdbcType=INTEGER},
+      </if>
+      <if test="businessHours != null">
+        #{businessHours,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=INTEGER},
+      </if>
+      <if test="password != null">
+        #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="salt != null">
+        #{salt,jdbcType=VARCHAR},
+      </if>
+      <if test="pwdSetTime != null">
+        #{pwdSetTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="pwdInactiveTime != null">
+        #{pwdInactiveTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastPwd != null">
+        #{lastPwd,jdbcType=VARCHAR},
+      </if>
+      <if test="initPwdFlag != null">
+        #{initPwdFlag,jdbcType=INTEGER},
+      </if>
+      <if test="lastModifyBy != null">
+        #{lastModifyBy,jdbcType=VARCHAR},
+      </if>
+      <if test="lastModifyDate != null">
+        #{lastModifyDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createBy != null">
+        #{createBy,jdbcType=VARCHAR},
+      </if>
+      <if test="createDate != null">
+        #{createDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="remarks != null">
+        #{remarks,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.dby.shop.entity.SysUserExample" resultType="java.lang.Long">
+    select count(*) from SYS_USER
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update SYS_USER
+    <set>
+      <if test="record.id != null">
+        ID = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.loginName != null">
+        LOGIN_NAME = #{record.loginName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.cpmpanyMail != null">
+        CPMPANY_MAIL = #{record.cpmpanyMail,jdbcType=VARCHAR},
+      </if>
+      <if test="record.cpmpanyAddress != null">
+        CPMPANY_ADDRESS = #{record.cpmpanyAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="record.cpmpanyPhone != null">
+        CPMPANY_PHONE = #{record.cpmpanyPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="record.cpmpanyName != null">
+        CPMPANY_NAME = #{record.cpmpanyName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.industry != null">
+        INDUSTRY = #{record.industry,jdbcType=INTEGER},
+      </if>
+      <if test="record.contactMail != null">
+        CONTACT_MAIL = #{record.contactMail,jdbcType=VARCHAR},
+      </if>
+      <if test="record.contactPhone != null">
+        CONTACT_PHONE = #{record.contactPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="record.contactName != null">
+        CONTACT_NAME = #{record.contactName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.storeName != null">
+        STORE_NAME = #{record.storeName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.doorHeadPhoto != null">
+        DOOR_HEAD_PHOTO = #{record.doorHeadPhoto,jdbcType=VARCHAR},
+      </if>
+      <if test="record.checkoutCounterPhoto != null">
+        CHECKOUT_COUNTER_PHOTO = #{record.checkoutCounterPhoto,jdbcType=VARCHAR},
+      </if>
+      <if test="record.businessLicensePhoto != null">
+        BUSINESS_LICENSE_PHOTO = #{record.businessLicensePhoto,jdbcType=VARCHAR},
+      </if>
+      <if test="record.userType != null">
+        USER_TYPE = #{record.userType,jdbcType=INTEGER},
+      </if>
+      <if test="record.businessHours != null">
+        BUSINESS_HOURS = #{record.businessHours,jdbcType=VARCHAR},
+      </if>
+      <if test="record.status != null">
+        STATUS = #{record.status,jdbcType=INTEGER},
+      </if>
+      <if test="record.password != null">
+        PASSWORD = #{record.password,jdbcType=VARCHAR},
+      </if>
+      <if test="record.salt != null">
+        SALT = #{record.salt,jdbcType=VARCHAR},
+      </if>
+      <if test="record.pwdSetTime != null">
+        PWD_SET_TIME = #{record.pwdSetTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.pwdInactiveTime != null">
+        PWD_INACTIVE_TIME = #{record.pwdInactiveTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.lastPwd != null">
+        LAST_PWD = #{record.lastPwd,jdbcType=VARCHAR},
+      </if>
+      <if test="record.initPwdFlag != null">
+        INIT_PWD_FLAG = #{record.initPwdFlag,jdbcType=INTEGER},
+      </if>
+      <if test="record.lastModifyBy != null">
+        LAST_MODIFY_BY = #{record.lastModifyBy,jdbcType=VARCHAR},
+      </if>
+      <if test="record.lastModifyDate != null">
+        LAST_MODIFY_DATE = #{record.lastModifyDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.createBy != null">
+        CREATE_BY = #{record.createBy,jdbcType=VARCHAR},
+      </if>
+      <if test="record.createDate != null">
+        CREATE_DATE = #{record.createDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.remarks != null">
+        REMARKS = #{record.remarks,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update SYS_USER
+    set ID = #{record.id,jdbcType=INTEGER},
+      LOGIN_NAME = #{record.loginName,jdbcType=VARCHAR},
+      CPMPANY_MAIL = #{record.cpmpanyMail,jdbcType=VARCHAR},
+      CPMPANY_ADDRESS = #{record.cpmpanyAddress,jdbcType=VARCHAR},
+      CPMPANY_PHONE = #{record.cpmpanyPhone,jdbcType=VARCHAR},
+      CPMPANY_NAME = #{record.cpmpanyName,jdbcType=VARCHAR},
+      INDUSTRY = #{record.industry,jdbcType=INTEGER},
+      CONTACT_MAIL = #{record.contactMail,jdbcType=VARCHAR},
+      CONTACT_PHONE = #{record.contactPhone,jdbcType=VARCHAR},
+      CONTACT_NAME = #{record.contactName,jdbcType=VARCHAR},
+      STORE_NAME = #{record.storeName,jdbcType=VARCHAR},
+      DOOR_HEAD_PHOTO = #{record.doorHeadPhoto,jdbcType=VARCHAR},
+      CHECKOUT_COUNTER_PHOTO = #{record.checkoutCounterPhoto,jdbcType=VARCHAR},
+      BUSINESS_LICENSE_PHOTO = #{record.businessLicensePhoto,jdbcType=VARCHAR},
+      USER_TYPE = #{record.userType,jdbcType=INTEGER},
+      BUSINESS_HOURS = #{record.businessHours,jdbcType=VARCHAR},
+      STATUS = #{record.status,jdbcType=INTEGER},
+      PASSWORD = #{record.password,jdbcType=VARCHAR},
+      SALT = #{record.salt,jdbcType=VARCHAR},
+      PWD_SET_TIME = #{record.pwdSetTime,jdbcType=TIMESTAMP},
+      PWD_INACTIVE_TIME = #{record.pwdInactiveTime,jdbcType=TIMESTAMP},
+      LAST_PWD = #{record.lastPwd,jdbcType=VARCHAR},
+      INIT_PWD_FLAG = #{record.initPwdFlag,jdbcType=INTEGER},
+      LAST_MODIFY_BY = #{record.lastModifyBy,jdbcType=VARCHAR},
+      LAST_MODIFY_DATE = #{record.lastModifyDate,jdbcType=TIMESTAMP},
+      CREATE_BY = #{record.createBy,jdbcType=VARCHAR},
+      CREATE_DATE = #{record.createDate,jdbcType=TIMESTAMP},
+      REMARKS = #{record.remarks,jdbcType=VARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.dby.shop.entity.SysUser">
+    update SYS_USER
+    <set>
+      <if test="loginName != null">
+        LOGIN_NAME = #{loginName,jdbcType=VARCHAR},
+      </if>
+      <if test="cpmpanyMail != null">
+        CPMPANY_MAIL = #{cpmpanyMail,jdbcType=VARCHAR},
+      </if>
+      <if test="cpmpanyAddress != null">
+        CPMPANY_ADDRESS = #{cpmpanyAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="cpmpanyPhone != null">
+        CPMPANY_PHONE = #{cpmpanyPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="cpmpanyName != null">
+        CPMPANY_NAME = #{cpmpanyName,jdbcType=VARCHAR},
+      </if>
+      <if test="industry != null">
+        INDUSTRY = #{industry,jdbcType=INTEGER},
+      </if>
+      <if test="contactMail != null">
+        CONTACT_MAIL = #{contactMail,jdbcType=VARCHAR},
+      </if>
+      <if test="contactPhone != null">
+        CONTACT_PHONE = #{contactPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="contactName != null">
+        CONTACT_NAME = #{contactName,jdbcType=VARCHAR},
+      </if>
+      <if test="storeName != null">
+        STORE_NAME = #{storeName,jdbcType=VARCHAR},
+      </if>
+      <if test="doorHeadPhoto != null">
+        DOOR_HEAD_PHOTO = #{doorHeadPhoto,jdbcType=VARCHAR},
+      </if>
+      <if test="checkoutCounterPhoto != null">
+        CHECKOUT_COUNTER_PHOTO = #{checkoutCounterPhoto,jdbcType=VARCHAR},
+      </if>
+      <if test="businessLicensePhoto != null">
+        BUSINESS_LICENSE_PHOTO = #{businessLicensePhoto,jdbcType=VARCHAR},
+      </if>
+      <if test="userType != null">
+        USER_TYPE = #{userType,jdbcType=INTEGER},
+      </if>
+      <if test="businessHours != null">
+        BUSINESS_HOURS = #{businessHours,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        STATUS = #{status,jdbcType=INTEGER},
+      </if>
+      <if test="password != null">
+        PASSWORD = #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="salt != null">
+        SALT = #{salt,jdbcType=VARCHAR},
+      </if>
+      <if test="pwdSetTime != null">
+        PWD_SET_TIME = #{pwdSetTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="pwdInactiveTime != null">
+        PWD_INACTIVE_TIME = #{pwdInactiveTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastPwd != null">
+        LAST_PWD = #{lastPwd,jdbcType=VARCHAR},
+      </if>
+      <if test="initPwdFlag != null">
+        INIT_PWD_FLAG = #{initPwdFlag,jdbcType=INTEGER},
+      </if>
+      <if test="lastModifyBy != null">
+        LAST_MODIFY_BY = #{lastModifyBy,jdbcType=VARCHAR},
+      </if>
+      <if test="lastModifyDate != null">
+        LAST_MODIFY_DATE = #{lastModifyDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createBy != null">
+        CREATE_BY = #{createBy,jdbcType=VARCHAR},
+      </if>
+      <if test="createDate != null">
+        CREATE_DATE = #{createDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="remarks != null">
+        REMARKS = #{remarks,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.dby.shop.entity.SysUser">
+    update SYS_USER
+    set LOGIN_NAME = #{loginName,jdbcType=VARCHAR},
+      CPMPANY_MAIL = #{cpmpanyMail,jdbcType=VARCHAR},
+      CPMPANY_ADDRESS = #{cpmpanyAddress,jdbcType=VARCHAR},
+      CPMPANY_PHONE = #{cpmpanyPhone,jdbcType=VARCHAR},
+      CPMPANY_NAME = #{cpmpanyName,jdbcType=VARCHAR},
+      INDUSTRY = #{industry,jdbcType=INTEGER},
+      CONTACT_MAIL = #{contactMail,jdbcType=VARCHAR},
+      CONTACT_PHONE = #{contactPhone,jdbcType=VARCHAR},
+      CONTACT_NAME = #{contactName,jdbcType=VARCHAR},
+      STORE_NAME = #{storeName,jdbcType=VARCHAR},
+      DOOR_HEAD_PHOTO = #{doorHeadPhoto,jdbcType=VARCHAR},
+      CHECKOUT_COUNTER_PHOTO = #{checkoutCounterPhoto,jdbcType=VARCHAR},
+      BUSINESS_LICENSE_PHOTO = #{businessLicensePhoto,jdbcType=VARCHAR},
+      USER_TYPE = #{userType,jdbcType=INTEGER},
+      BUSINESS_HOURS = #{businessHours,jdbcType=VARCHAR},
+      STATUS = #{status,jdbcType=INTEGER},
+      PASSWORD = #{password,jdbcType=VARCHAR},
+      SALT = #{salt,jdbcType=VARCHAR},
+      PWD_SET_TIME = #{pwdSetTime,jdbcType=TIMESTAMP},
+      PWD_INACTIVE_TIME = #{pwdInactiveTime,jdbcType=TIMESTAMP},
+      LAST_PWD = #{lastPwd,jdbcType=VARCHAR},
+      INIT_PWD_FLAG = #{initPwdFlag,jdbcType=INTEGER},
+      LAST_MODIFY_BY = #{lastModifyBy,jdbcType=VARCHAR},
+      LAST_MODIFY_DATE = #{lastModifyDate,jdbcType=TIMESTAMP},
+      CREATE_BY = #{createBy,jdbcType=VARCHAR},
+      CREATE_DATE = #{createDate,jdbcType=TIMESTAMP},
+      REMARKS = #{remarks,jdbcType=VARCHAR}
+    where ID = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

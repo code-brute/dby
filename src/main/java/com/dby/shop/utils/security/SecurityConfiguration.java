@@ -43,8 +43,8 @@ import javax.servlet.Filter;
  * @date: 2018-04-12 下午1:07
  */
 
-@Configuration
-@AutoConfigureAfter(CacheConfiguration.class)
+//@Configuration
+//@AutoConfigureAfter(CacheConfiguration.class)
 public class SecurityConfiguration implements EnvironmentAware {
 
     private RelaxedPropertyResolver propertyResolver;

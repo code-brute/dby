@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+    <!--数据库驱动-->
+    <context id="MySqlTables" targetRuntime="MyBatis3">
+
+        <plugin type="org.mybatis.generator.plugins.SerializablePlugin"/>
+        <plugin type="org.mybatis.generator.plugins.EqualsHashCodePlugin"/>
+        <plugin type="org.mybatis.generator.plugins.ToStringPlugin"/>
+
+        <!--
+                suppressAllComments:**阻止**生成注释，默认为false
+                suppressDate:**阻止**生成的注释包含时间戳，默认为false-->
+        <commentGenerator>
+            <property name="suppressDate" value="true"/>
+            <!--不生成注释-->
+            <property name="suppressAllComments" value="true"/>
+        </commentGenerator>
+        <!--数据库链接地址账号密码-->
+        <jdbcConnection
+                driverClass="com.mysql.jdbc.Driver"
+                connectionURL="jdbc:mysql://192.168.2.221:3306/dby"
+                userId="root"
+                password="root">
+        </jdbcConnection>
+
+        <javaTypeResolver>
+            <property name="forceBigDecimals" value="false"/>
+        </javaTypeResolver>
+        <!--生成Model类存放位置-->
+        <javaModelGenerator targetPackage="com.dby.shop.entity"
+                            targetProject="src/main/java">
+            <property name="rootClass" value="com.dby.shop.config.base.Entity"/>
+        </javaModelGenerator>
+        <!--生成映射文件存放位置-->
+        <sqlMapGenerator targetPackage="config.mybatis.mapper"
+                         targetProject="src/main/resources">
+            <property name="enableSubPackages" value="true"/>
+        </sqlMapGenerator>
+        <!--生成Dao类存放位置-->
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.dby.shop.dao"
+                             targetProject="src/main/java">
+            <property name="rootClass" value="com.dby.shop.config.base.IBaseDAO"/>
+            <property name="enableSubPackages" value="true"/>
+        </javaClientGenerator>
+
+        <!--5，enableInsert（默认true）：指定是否生成insert语句；
+        6，enableSelectByPrimaryKey（默认true）：指定是否生成按照主键查询对象的语句（就是getById或get）；
+        7，enableSelectByExample（默认true）：MyBatis3Simple为false，指定是否生成动态查询语句；
+        8，enableUpdateByPrimaryKey（默认true）：指定是否生成按照主键修改对象的语句（即update)；
+        9，enableDeleteByPrimaryKey（默认true）：指定是否生成按照主键删除对象的语句（即delete）；
+        10，enableDeleteByExample（默认true）：MyBatis3Simple为false，指定是否生成动态删除语句；
+        11，enableCountByExample（默认true）：MyBatis3Simple为false，指定是否生成动态查询总条数语句（用于分页的总条数查询）；
+        12，enableUpdateByExample（默认true）：MyBatis3Simple为false，指定是否生成动态修改语句（只修改对象中不为空的属性）；  -->
+
+        <table tableName="SYS_CONFIG"
+               domainObjectName="SysConfig"
+               mapperName="ISysConfigSDAO"
+        >
+            <generatedKey column="ID" sqlStatement="JDBC"/>
+        </table>
+        <table tableName="APP_CONFIG"
+               domainObjectName="AppConfig"
+               mapperName="IAppConfigSDAO"
+        >
+            <generatedKey column="ID" sqlStatement="JDBC"/>
+        </table>
+        <table tableName="SYS_INDUSTRY"
+               domainObjectName="SysIndustry"
+               mapperName="ISysIndustrySDAO"
+        >
+            <generatedKey column="ID" sqlStatement="JDBC"/>
+        </table>
+        <table tableName="SYS_USER"
+               domainObjectName="SysUser"
+               mapperName="ISysUserSDAO"
+        >
+            <generatedKey column="ID" sqlStatement="JDBC"/>
+        </table>
+    </context>
+</generatorConfiguration>

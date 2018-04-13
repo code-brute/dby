@@ -26,15 +26,20 @@ public class WechatAppLoginDOMImpl extends BaseDomain implements IWechatAppLogin
     private static Logger logger = LoggerFactory.getLogger(WechatAppLoginDOMImpl.class);
 
     @Override
-    public void login() {
+    public String login(String code) {
         //创建OkHttpClient对象
+        String appid = "";
+        String secret = "";
+        String jsCode = "";
+        StringBuilder url = new StringBuilder("https://api.weixin.qq.com/sns/jscode2session")
+                .append("?appid=").append(appid)
+                .append("&secret=").append(secret).append("&js_code=")
+                .append(jsCode).append("&grant_type=authorization_code");
+
         OkHttpClient client = new OkHttpClient();
         Request request = new Request.Builder()
                 //请求接口。如果需要传参拼接到接口后面。
-                //https://api.weixin.qq.com/sns/jscode2session
-                // ?appid=APPID&secret=SECRET&
-                // js_code=JSCODE&grant_type=authorization_code
-                .url("")
+                .url(url.toString())
                 //创建Request 对象
                 .build();
         Response response;
@@ -50,10 +55,11 @@ public class WechatAppLoginDOMImpl extends BaseDomain implements IWechatAppLogin
         } catch (IOException e) {
             logger.error(e.getMessage(),e);
         }
+        return "";
     }
 
     public static void main(String[] args) {
         WechatAppLoginDOMImpl wechatAppLoginDOM = new WechatAppLoginDOMImpl();
-        wechatAppLoginDOM.login();
+        wechatAppLoginDOM.login("");
     }
 }

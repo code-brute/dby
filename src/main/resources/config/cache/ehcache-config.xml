@@ -47,4 +47,9 @@
            overflowToDisk="true"
            statistics="true">
     </cache>
+    <cache name="seesion-key"
+           eternal="true"
+           overflowToDisk="true"
+           statistics="true">
+    </cache>
 </ehcache>
