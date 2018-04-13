@@ -4,7 +4,9 @@ import com.dby.shop.entity.SysUser;
 import com.dby.shop.entity.SysUserExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public interface ISysUserSDAO {
     long countByExample(SysUserExample example);
 

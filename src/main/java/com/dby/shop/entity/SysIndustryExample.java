@@ -305,52 +305,62 @@ public class SysIndustryExample {
             return (Criteria) this;
         }
 
-        public Criteria andLastModifyByEqualTo(Integer value) {
+        public Criteria andLastModifyByEqualTo(String value) {
             addCriterion("LAST_MODIFY_BY =", value, "lastModifyBy");
             return (Criteria) this;
         }
 
-        public Criteria andLastModifyByNotEqualTo(Integer value) {
+        public Criteria andLastModifyByNotEqualTo(String value) {
             addCriterion("LAST_MODIFY_BY <>", value, "lastModifyBy");
             return (Criteria) this;
         }
 
-        public Criteria andLastModifyByGreaterThan(Integer value) {
+        public Criteria andLastModifyByGreaterThan(String value) {
             addCriterion("LAST_MODIFY_BY >", value, "lastModifyBy");
             return (Criteria) this;
         }
 
-        public Criteria andLastModifyByGreaterThanOrEqualTo(Integer value) {
+        public Criteria andLastModifyByGreaterThanOrEqualTo(String value) {
             addCriterion("LAST_MODIFY_BY >=", value, "lastModifyBy");
             return (Criteria) this;
         }
 
-        public Criteria andLastModifyByLessThan(Integer value) {
+        public Criteria andLastModifyByLessThan(String value) {
             addCriterion("LAST_MODIFY_BY <", value, "lastModifyBy");
             return (Criteria) this;
         }
 
-        public Criteria andLastModifyByLessThanOrEqualTo(Integer value) {
+        public Criteria andLastModifyByLessThanOrEqualTo(String value) {
             addCriterion("LAST_MODIFY_BY <=", value, "lastModifyBy");
             return (Criteria) this;
         }
 
-        public Criteria andLastModifyByIn(List<Integer> values) {
+        public Criteria andLastModifyByLike(String value) {
+            addCriterion("LAST_MODIFY_BY like", value, "lastModifyBy");
+            return (Criteria) this;
+        }
+
+        public Criteria andLastModifyByNotLike(String value) {
+            addCriterion("LAST_MODIFY_BY not like", value, "lastModifyBy");
+            return (Criteria) this;
+        }
+
+        public Criteria andLastModifyByIn(List<String> values) {
             addCriterion("LAST_MODIFY_BY in", values, "lastModifyBy");
             return (Criteria) this;
         }
 
-        public Criteria andLastModifyByNotIn(List<Integer> values) {
+        public Criteria andLastModifyByNotIn(List<String> values) {
             addCriterion("LAST_MODIFY_BY not in", values, "lastModifyBy");
             return (Criteria) this;
         }
 
-        public Criteria andLastModifyByBetween(Integer value1, Integer value2) {
+        public Criteria andLastModifyByBetween(String value1, String value2) {
             addCriterion("LAST_MODIFY_BY between", value1, value2, "lastModifyBy");
             return (Criteria) this;
         }
 
-        public Criteria andLastModifyByNotBetween(Integer value1, Integer value2) {
+        public Criteria andLastModifyByNotBetween(String value1, String value2) {
             addCriterion("LAST_MODIFY_BY not between", value1, value2, "lastModifyBy");
             return (Criteria) this;
         }
@@ -425,52 +435,62 @@ public class SysIndustryExample {
             return (Criteria) this;
         }
 
-        public Criteria andCreateByEqualTo(Integer value) {
+        public Criteria andCreateByEqualTo(String value) {
             addCriterion("CREATE_BY =", value, "createBy");
             return (Criteria) this;
         }
 
-        public Criteria andCreateByNotEqualTo(Integer value) {
+        public Criteria andCreateByNotEqualTo(String value) {
             addCriterion("CREATE_BY <>", value, "createBy");
             return (Criteria) this;
         }
 
-        public Criteria andCreateByGreaterThan(Integer value) {
+        public Criteria andCreateByGreaterThan(String value) {
             addCriterion("CREATE_BY >", value, "createBy");
             return (Criteria) this;
         }
 
-        public Criteria andCreateByGreaterThanOrEqualTo(Integer value) {
+        public Criteria andCreateByGreaterThanOrEqualTo(String value) {
             addCriterion("CREATE_BY >=", value, "createBy");
             return (Criteria) this;
         }
 
-        public Criteria andCreateByLessThan(Integer value) {
+        public Criteria andCreateByLessThan(String value) {
             addCriterion("CREATE_BY <", value, "createBy");
             return (Criteria) this;
         }
 
-        public Criteria andCreateByLessThanOrEqualTo(Integer value) {
+        public Criteria andCreateByLessThanOrEqualTo(String value) {
             addCriterion("CREATE_BY <=", value, "createBy");
             return (Criteria) this;
         }
 
-        public Criteria andCreateByIn(List<Integer> values) {
+        public Criteria andCreateByLike(String value) {
+            addCriterion("CREATE_BY like", value, "createBy");
+            return (Criteria) this;
+        }
+
+        public Criteria andCreateByNotLike(String value) {
+            addCriterion("CREATE_BY not like", value, "createBy");
+            return (Criteria) this;
+        }
+
+        public Criteria andCreateByIn(List<String> values) {
             addCriterion("CREATE_BY in", values, "createBy");
             return (Criteria) this;
         }
 
-        public Criteria andCreateByNotIn(List<Integer> values) {
+        public Criteria andCreateByNotIn(List<String> values) {
             addCriterion("CREATE_BY not in", values, "createBy");
             return (Criteria) this;
         }
 
-        public Criteria andCreateByBetween(Integer value1, Integer value2) {
+        public Criteria andCreateByBetween(String value1, String value2) {
             addCriterion("CREATE_BY between", value1, value2, "createBy");
             return (Criteria) this;
         }
 
-        public Criteria andCreateByNotBetween(Integer value1, Integer value2) {
+        public Criteria andCreateByNotBetween(String value1, String value2) {
             addCriterion("CREATE_BY not between", value1, value2, "createBy");
             return (Criteria) this;
         }

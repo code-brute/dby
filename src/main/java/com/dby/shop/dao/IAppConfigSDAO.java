@@ -4,7 +4,9 @@ import com.dby.shop.entity.AppConfig;
 import com.dby.shop.entity.AppConfigExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public interface IAppConfigSDAO {
     long countByExample(AppConfigExample example);
 

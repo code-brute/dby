@@ -7,9 +7,9 @@
     <result column="SESSION_KEY" jdbcType="VARCHAR" property="sessionKey" />
     <result column="UNION_ID" jdbcType="VARCHAR" property="unionId" />
     <result column="STATUS" jdbcType="INTEGER" property="status" />
-    <result column="LAST_MODIFY_BY" jdbcType="INTEGER" property="lastModifyBy" />
+    <result column="LAST_MODIFY_BY" jdbcType="VARCHAR" property="lastModifyBy" />
     <result column="LAST_MODIFY_DATE" jdbcType="TIMESTAMP" property="lastModifyDate" />
-    <result column="CREATE_BY" jdbcType="INTEGER" property="createBy" />
+    <result column="CREATE_BY" jdbcType="VARCHAR" property="createBy" />
     <result column="CREATE_DATE" jdbcType="TIMESTAMP" property="createDate" />
     <result column="REMARKS" jdbcType="VARCHAR" property="remarks" />
   </resultMap>
@@ -111,8 +111,8 @@
       CREATE_BY, CREATE_DATE, REMARKS
       )
     values (#{openId,jdbcType=VARCHAR}, #{sessionKey,jdbcType=VARCHAR}, #{unionId,jdbcType=VARCHAR}, 
-      #{status,jdbcType=INTEGER}, #{lastModifyBy,jdbcType=INTEGER}, #{lastModifyDate,jdbcType=TIMESTAMP}, 
-      #{createBy,jdbcType=INTEGER}, #{createDate,jdbcType=TIMESTAMP}, #{remarks,jdbcType=VARCHAR}
+      #{status,jdbcType=INTEGER}, #{lastModifyBy,jdbcType=VARCHAR}, #{lastModifyDate,jdbcType=TIMESTAMP}, 
+      #{createBy,jdbcType=VARCHAR}, #{createDate,jdbcType=TIMESTAMP}, #{remarks,jdbcType=VARCHAR}
       )
   </insert>
   <insert id="insertSelective" keyColumn="ID" keyProperty="id" parameterType="com.dby.shop.entity.AppConfig" useGeneratedKeys="true">
@@ -160,13 +160,13 @@
         #{status,jdbcType=INTEGER},
       </if>
       <if test="lastModifyBy != null">
-        #{lastModifyBy,jdbcType=INTEGER},
+        #{lastModifyBy,jdbcType=VARCHAR},
       </if>
       <if test="lastModifyDate != null">
         #{lastModifyDate,jdbcType=TIMESTAMP},
       </if>
       <if test="createBy != null">
-        #{createBy,jdbcType=INTEGER},
+        #{createBy,jdbcType=VARCHAR},
       </if>
       <if test="createDate != null">
         #{createDate,jdbcType=TIMESTAMP},
@@ -201,13 +201,13 @@
         STATUS = #{record.status,jdbcType=INTEGER},
       </if>
       <if test="record.lastModifyBy != null">
-        LAST_MODIFY_BY = #{record.lastModifyBy,jdbcType=INTEGER},
+        LAST_MODIFY_BY = #{record.lastModifyBy,jdbcType=VARCHAR},
       </if>
       <if test="record.lastModifyDate != null">
         LAST_MODIFY_DATE = #{record.lastModifyDate,jdbcType=TIMESTAMP},
       </if>
       <if test="record.createBy != null">
-        CREATE_BY = #{record.createBy,jdbcType=INTEGER},
+        CREATE_BY = #{record.createBy,jdbcType=VARCHAR},
       </if>
       <if test="record.createDate != null">
         CREATE_DATE = #{record.createDate,jdbcType=TIMESTAMP},
@@ -227,9 +227,9 @@
       SESSION_KEY = #{record.sessionKey,jdbcType=VARCHAR},
       UNION_ID = #{record.unionId,jdbcType=VARCHAR},
       STATUS = #{record.status,jdbcType=INTEGER},
-      LAST_MODIFY_BY = #{record.lastModifyBy,jdbcType=INTEGER},
+      LAST_MODIFY_BY = #{record.lastModifyBy,jdbcType=VARCHAR},
       LAST_MODIFY_DATE = #{record.lastModifyDate,jdbcType=TIMESTAMP},
-      CREATE_BY = #{record.createBy,jdbcType=INTEGER},
+      CREATE_BY = #{record.createBy,jdbcType=VARCHAR},
       CREATE_DATE = #{record.createDate,jdbcType=TIMESTAMP},
       REMARKS = #{record.remarks,jdbcType=VARCHAR}
     <if test="_parameter != null">
@@ -252,13 +252,13 @@
         STATUS = #{status,jdbcType=INTEGER},
       </if>
       <if test="lastModifyBy != null">
-        LAST_MODIFY_BY = #{lastModifyBy,jdbcType=INTEGER},
+        LAST_MODIFY_BY = #{lastModifyBy,jdbcType=VARCHAR},
       </if>
       <if test="lastModifyDate != null">
         LAST_MODIFY_DATE = #{lastModifyDate,jdbcType=TIMESTAMP},
       </if>
       <if test="createBy != null">
-        CREATE_BY = #{createBy,jdbcType=INTEGER},
+        CREATE_BY = #{createBy,jdbcType=VARCHAR},
       </if>
       <if test="createDate != null">
         CREATE_DATE = #{createDate,jdbcType=TIMESTAMP},
@@ -275,9 +275,9 @@
       SESSION_KEY = #{sessionKey,jdbcType=VARCHAR},
       UNION_ID = #{unionId,jdbcType=VARCHAR},
       STATUS = #{status,jdbcType=INTEGER},
-      LAST_MODIFY_BY = #{lastModifyBy,jdbcType=INTEGER},
+      LAST_MODIFY_BY = #{lastModifyBy,jdbcType=VARCHAR},
       LAST_MODIFY_DATE = #{lastModifyDate,jdbcType=TIMESTAMP},
-      CREATE_BY = #{createBy,jdbcType=INTEGER},
+      CREATE_BY = #{createBy,jdbcType=VARCHAR},
       CREATE_DATE = #{createDate,jdbcType=TIMESTAMP},
       REMARKS = #{remarks,jdbcType=VARCHAR}
     where ID = #{id,jdbcType=INTEGER}

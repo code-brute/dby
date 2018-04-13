@@ -4,7 +4,9 @@ import com.dby.shop.entity.SysConfig;
 import com.dby.shop.entity.SysConfigExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public interface ISysConfigSDAO {
     long countByExample(SysConfigExample example);
 

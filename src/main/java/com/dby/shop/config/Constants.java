@@ -1,10 +1,30 @@
 package com.dby.shop.config;
 
+import java.io.Serializable;
+
 /**
- * @Description:
- * @author: mitnick
- * @date: 2018-04-13 上午9:30
+ * @author mitnick
  */
-public interface Constants {
+public interface Constants extends Serializable{
+
+
+    /**
+     * 有效数据
+     */
+    Integer AVAILABLE_DATA = 10;
+
+    /**
+     * 无效数据
+     */
+    Integer INVALID = 99;
+
+
+    /**
+     * HashMap 初始容量大小
+     */
+    Integer INITIAL_CAPACITY = 16;
+
+
+
 
 }

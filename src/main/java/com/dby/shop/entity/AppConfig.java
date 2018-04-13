@@ -15,11 +15,11 @@ public class AppConfig extends Entity implements Serializable {
 
     private Integer status;
 
-    private Integer lastModifyBy;
+    private String lastModifyBy;
 
     private Date lastModifyDate;
 
-    private Integer createBy;
+    private String createBy;
 
     private Date createDate;
 
@@ -67,11 +67,11 @@ public class AppConfig extends Entity implements Serializable {
         this.status = status;
     }
 
-    public Integer getLastModifyBy() {
+    public String getLastModifyBy() {
         return lastModifyBy;
     }
 
-    public void setLastModifyBy(Integer lastModifyBy) {
+    public void setLastModifyBy(String lastModifyBy) {
         this.lastModifyBy = lastModifyBy;
     }
 
@@ -83,11 +83,11 @@ public class AppConfig extends Entity implements Serializable {
         this.lastModifyDate = lastModifyDate;
     }
 
-    public Integer getCreateBy() {
+    public String getCreateBy() {
         return createBy;
     }
 
-    public void setCreateBy(Integer createBy) {
+    public void setCreateBy(String createBy) {
         this.createBy = createBy;
     }
 
