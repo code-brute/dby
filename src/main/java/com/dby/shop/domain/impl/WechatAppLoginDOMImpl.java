@@ -8,6 +8,7 @@ import com.dby.shop.dao.IAppConfigSDAO;
 import com.dby.shop.dao.ISysConfigSDAO;
 import com.dby.shop.domain.IWechatAppLoginDOM;
 import com.dby.shop.entity.AppConfig;
+import com.dby.shop.entity.AppConfigExample;
 import com.dby.shop.entity.SysConfig;
 import com.dby.shop.entity.SysConfigExample;
 import com.dby.shop.utils.cache.DBYCacheManager;
@@ -17,6 +18,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.io.IOException;
 import java.util.List;
@@ -95,7 +97,9 @@ public class WechatAppLoginDOMImpl extends BaseDomain implements IWechatAppLogin
                 String sessionKey = jsonObject.getString("session_key");
                 String openId = jsonObject.getString("openid");
                 appSession= encrypt(sessionKey, openId);
+                // 将 openID sessionKey 记录进 表中
                 AppConfig appConfig = insertAppconfig(code,nickName, sessionKey, openId, appSession);
+
                 Cache cache = DBYCacheManager.getInstance().getCache(CacheConstants.SESSION_KEY);
                 cache.put(appSession, appConfig);
             }
@@ -106,7 +110,11 @@ public class WechatAppLoginDOMImpl extends BaseDomain implements IWechatAppLogin
         return appSession;
     }
 
+
     private AppConfig insertAppconfig(String code,String nickName, String sessionKey, String openId, String appSession) {
+
+        // 需要先查询之前的数据，如果存在则删除
+        deleteAppConfigByOpenId(nickName, openId);
 
         AppConfig appConfig = new AppConfig();
         appConfig.setOpenId(openId);
@@ -120,6 +128,13 @@ public class WechatAppLoginDOMImpl extends BaseDomain implements IWechatAppLogin
         appConfig.setAppCode(code);
         appConfigSDAO.insert(appConfig);
         return appConfig;
+    }
+
+
+    public void deleteAppConfigByOpenId(String nickName, String openId) {
+        AppConfigExample appConfigExample = new AppConfigExample();
+        appConfigExample.createCriteria().andOpenIdEqualTo(openId).andLastModifyByEqualTo(nickName);
+        appConfigSDAO.deleteByExample(appConfigExample);
     }
 
 }

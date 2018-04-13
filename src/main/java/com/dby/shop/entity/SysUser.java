@@ -27,21 +27,21 @@ public class SysUser extends Entity implements Serializable {
 
     private String storeName;
 
-    private String doorHeadPhoto;
+    private String storePhoto;
 
     private String checkoutCounterPhoto;
 
     private String businessLicensePhoto;
 
-    private Integer userType;
+    private String storePhone;
 
-    private String businessHours;
+    private String businessTime;
 
     private Integer status;
 
     private String password;
 
-    private String salt;
+    private Integer userType;
 
     private Date pwdSetTime;
 
@@ -60,6 +60,8 @@ public class SysUser extends Entity implements Serializable {
     private Date createDate;
 
     private String remarks;
+
+    private String salt;
 
     private static final long serialVersionUID = 1L;
 
@@ -151,12 +153,12 @@ public class SysUser extends Entity implements Serializable {
         this.storeName = storeName;
     }
 
-    public String getDoorHeadPhoto() {
-        return doorHeadPhoto;
+    public String getStorePhoto() {
+        return storePhoto;
     }
 
-    public void setDoorHeadPhoto(String doorHeadPhoto) {
-        this.doorHeadPhoto = doorHeadPhoto;
+    public void setStorePhoto(String storePhoto) {
+        this.storePhoto = storePhoto;
     }
 
     public String getCheckoutCounterPhoto() {
@@ -175,20 +177,20 @@ public class SysUser extends Entity implements Serializable {
         this.businessLicensePhoto = businessLicensePhoto;
     }
 
-    public Integer getUserType() {
-        return userType;
+    public String getStorePhone() {
+        return storePhone;
     }
 
-    public void setUserType(Integer userType) {
-        this.userType = userType;
+    public void setStorePhone(String storePhone) {
+        this.storePhone = storePhone;
     }
 
-    public String getBusinessHours() {
-        return businessHours;
+    public String getBusinessTime() {
+        return businessTime;
     }
 
-    public void setBusinessHours(String businessHours) {
-        this.businessHours = businessHours;
+    public void setBusinessTime(String businessTime) {
+        this.businessTime = businessTime;
     }
 
     public Integer getStatus() {
@@ -207,12 +209,12 @@ public class SysUser extends Entity implements Serializable {
         this.password = password;
     }
 
-    public String getSalt() {
-        return salt;
+    public Integer getUserType() {
+        return userType;
     }
 
-    public void setSalt(String salt) {
-        this.salt = salt;
+    public void setUserType(Integer userType) {
+        this.userType = userType;
     }
 
     public Date getPwdSetTime() {
@@ -287,6 +289,14 @@ public class SysUser extends Entity implements Serializable {
         this.remarks = remarks;
     }
 
+    public String getSalt() {
+        return salt;
+    }
+
+    public void setSalt(String salt) {
+        this.salt = salt;
+    }
+
     @Override
     public boolean equals(Object that) {
         if (this == that) {
@@ -310,14 +320,14 @@ public class SysUser extends Entity implements Serializable {
             && (this.getContactPhone() == null ? other.getContactPhone() == null : this.getContactPhone().equals(other.getContactPhone()))
             && (this.getContactName() == null ? other.getContactName() == null : this.getContactName().equals(other.getContactName()))
             && (this.getStoreName() == null ? other.getStoreName() == null : this.getStoreName().equals(other.getStoreName()))
-            && (this.getDoorHeadPhoto() == null ? other.getDoorHeadPhoto() == null : this.getDoorHeadPhoto().equals(other.getDoorHeadPhoto()))
+            && (this.getStorePhoto() == null ? other.getStorePhoto() == null : this.getStorePhoto().equals(other.getStorePhoto()))
             && (this.getCheckoutCounterPhoto() == null ? other.getCheckoutCounterPhoto() == null : this.getCheckoutCounterPhoto().equals(other.getCheckoutCounterPhoto()))
             && (this.getBusinessLicensePhoto() == null ? other.getBusinessLicensePhoto() == null : this.getBusinessLicensePhoto().equals(other.getBusinessLicensePhoto()))
-            && (this.getUserType() == null ? other.getUserType() == null : this.getUserType().equals(other.getUserType()))
-            && (this.getBusinessHours() == null ? other.getBusinessHours() == null : this.getBusinessHours().equals(other.getBusinessHours()))
+            && (this.getStorePhone() == null ? other.getStorePhone() == null : this.getStorePhone().equals(other.getStorePhone()))
+            && (this.getBusinessTime() == null ? other.getBusinessTime() == null : this.getBusinessTime().equals(other.getBusinessTime()))
             && (this.getStatus() == null ? other.getStatus() == null : this.getStatus().equals(other.getStatus()))
             && (this.getPassword() == null ? other.getPassword() == null : this.getPassword().equals(other.getPassword()))
-            && (this.getSalt() == null ? other.getSalt() == null : this.getSalt().equals(other.getSalt()))
+            && (this.getUserType() == null ? other.getUserType() == null : this.getUserType().equals(other.getUserType()))
             && (this.getPwdSetTime() == null ? other.getPwdSetTime() == null : this.getPwdSetTime().equals(other.getPwdSetTime()))
             && (this.getPwdInactiveTime() == null ? other.getPwdInactiveTime() == null : this.getPwdInactiveTime().equals(other.getPwdInactiveTime()))
             && (this.getLastPwd() == null ? other.getLastPwd() == null : this.getLastPwd().equals(other.getLastPwd()))
@@ -326,7 +336,8 @@ public class SysUser extends Entity implements Serializable {
             && (this.getLastModifyDate() == null ? other.getLastModifyDate() == null : this.getLastModifyDate().equals(other.getLastModifyDate()))
             && (this.getCreateBy() == null ? other.getCreateBy() == null : this.getCreateBy().equals(other.getCreateBy()))
             && (this.getCreateDate() == null ? other.getCreateDate() == null : this.getCreateDate().equals(other.getCreateDate()))
-            && (this.getRemarks() == null ? other.getRemarks() == null : this.getRemarks().equals(other.getRemarks()));
+            && (this.getRemarks() == null ? other.getRemarks() == null : this.getRemarks().equals(other.getRemarks()))
+            && (this.getSalt() == null ? other.getSalt() == null : this.getSalt().equals(other.getSalt()));
     }
 
     @Override
@@ -344,14 +355,14 @@ public class SysUser extends Entity implements Serializable {
         result = prime * result + ((getContactPhone() == null) ? 0 : getContactPhone().hashCode());
         result = prime * result + ((getContactName() == null) ? 0 : getContactName().hashCode());
         result = prime * result + ((getStoreName() == null) ? 0 : getStoreName().hashCode());
-        result = prime * result + ((getDoorHeadPhoto() == null) ? 0 : getDoorHeadPhoto().hashCode());
+        result = prime * result + ((getStorePhoto() == null) ? 0 : getStorePhoto().hashCode());
         result = prime * result + ((getCheckoutCounterPhoto() == null) ? 0 : getCheckoutCounterPhoto().hashCode());
         result = prime * result + ((getBusinessLicensePhoto() == null) ? 0 : getBusinessLicensePhoto().hashCode());
-        result = prime * result + ((getUserType() == null) ? 0 : getUserType().hashCode());
-        result = prime * result + ((getBusinessHours() == null) ? 0 : getBusinessHours().hashCode());
+        result = prime * result + ((getStorePhone() == null) ? 0 : getStorePhone().hashCode());
+        result = prime * result + ((getBusinessTime() == null) ? 0 : getBusinessTime().hashCode());
         result = prime * result + ((getStatus() == null) ? 0 : getStatus().hashCode());
         result = prime * result + ((getPassword() == null) ? 0 : getPassword().hashCode());
-        result = prime * result + ((getSalt() == null) ? 0 : getSalt().hashCode());
+        result = prime * result + ((getUserType() == null) ? 0 : getUserType().hashCode());
         result = prime * result + ((getPwdSetTime() == null) ? 0 : getPwdSetTime().hashCode());
         result = prime * result + ((getPwdInactiveTime() == null) ? 0 : getPwdInactiveTime().hashCode());
         result = prime * result + ((getLastPwd() == null) ? 0 : getLastPwd().hashCode());
@@ -361,6 +372,7 @@ public class SysUser extends Entity implements Serializable {
         result = prime * result + ((getCreateBy() == null) ? 0 : getCreateBy().hashCode());
         result = prime * result + ((getCreateDate() == null) ? 0 : getCreateDate().hashCode());
         result = prime * result + ((getRemarks() == null) ? 0 : getRemarks().hashCode());
+        result = prime * result + ((getSalt() == null) ? 0 : getSalt().hashCode());
         return result;
     }
 
@@ -381,14 +393,14 @@ public class SysUser extends Entity implements Serializable {
         sb.append(", contactPhone=").append(contactPhone);
         sb.append(", contactName=").append(contactName);
         sb.append(", storeName=").append(storeName);
-        sb.append(", doorHeadPhoto=").append(doorHeadPhoto);
+        sb.append(", storePhoto=").append(storePhoto);
         sb.append(", checkoutCounterPhoto=").append(checkoutCounterPhoto);
         sb.append(", businessLicensePhoto=").append(businessLicensePhoto);
-        sb.append(", userType=").append(userType);
-        sb.append(", businessHours=").append(businessHours);
+        sb.append(", storePhone=").append(storePhone);
+        sb.append(", businessTime=").append(businessTime);
         sb.append(", status=").append(status);
         sb.append(", password=").append(password);
-        sb.append(", salt=").append(salt);
+        sb.append(", userType=").append(userType);
         sb.append(", pwdSetTime=").append(pwdSetTime);
         sb.append(", pwdInactiveTime=").append(pwdInactiveTime);
         sb.append(", lastPwd=").append(lastPwd);
@@ -398,6 +410,7 @@ public class SysUser extends Entity implements Serializable {
         sb.append(", createBy=").append(createBy);
         sb.append(", createDate=").append(createDate);
         sb.append(", remarks=").append(remarks);
+        sb.append(", salt=").append(salt);
         sb.append(", serialVersionUID=").append(serialVersionUID);
         sb.append("]");
         return sb.toString();

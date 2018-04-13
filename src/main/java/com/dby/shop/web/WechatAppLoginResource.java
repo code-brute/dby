@@ -37,12 +37,22 @@ public class WechatAppLoginResource extends BaseResource{
     public ResponseEntity<ResultBean> onLogin(@RequestParam(name = "code") String code,
                                               @RequestParam(name = "nickName") String nickName){
         ResultBean resultBean = new ResultBean();
-        wechatAppLoginService.login(code,nickName);
-        JSONObject jsonObject = new JSONObject();
-        jsonObject.put("sessionKey", "1342");
-        resultBean.setData(jsonObject);
-        ResponseEntity<ResultBean> responseEntity = new ResponseEntity<ResultBean>(resultBean,HttpStatus.OK);
-        logger.debug("小程序成功登录 {}",code);
+        ResponseEntity<ResultBean> responseEntity = null;
+        try {
+
+            String sessionKey = wechatAppLoginService.login(code,nickName);
+            JSONObject jsonObject = new JSONObject();
+            jsonObject.put("sessionKey", sessionKey);
+            resultBean.setData(jsonObject);
+            responseEntity = new ResponseEntity<ResultBean>(resultBean, HttpStatus.OK);
+            logger.debug("小程序成功登录 {}",code);
+        } catch (Exception e) {
+            resultBean = new ResultBean();
+            resultBean.setCode(HttpStatus.UNPROCESSABLE_ENTITY.value());
+            resultBean.setMsg("小程序登录失败"+e.getMessage());
+            responseEntity = new ResponseEntity<ResultBean>(resultBean,HttpStatus.UNPROCESSABLE_ENTITY);
+        }
+
         return responseEntity;
     }
 }

@@ -3,6 +3,7 @@ package com.dby.shop.dao;
 import com.dby.shop.DbyApplicationTests;
 import com.dby.shop.config.Constants;
 import com.dby.shop.domain.impl.WechatAppLoginDOMImpl;
+import com.dby.shop.entity.AppConfigExample;
 import com.dby.shop.entity.SysConfig;
 import com.dby.shop.entity.SysConfigExample;
 
@@ -34,6 +35,9 @@ public class IAppConfigSDAOTest extends DbyApplicationTests{
 
     @Test
     public void deleteByExample() throws Exception {
+        AppConfigExample appConfigExample = new AppConfigExample();
+        appConfigExample.createCriteria().andOpenIdEqualTo("o4_Vn5NqzJlXVvQhD2wL6mMb0Lzc").andLastModifyByEqualTo("岑夫子");
+        appConfigSDAO.deleteByExample(appConfigExample);
     }
 
     @Test
