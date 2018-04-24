@@ -1,6 +1,8 @@
 package com.dby.shop.entity;
 
 import com.dby.shop.config.base.Entity;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import java.io.Serializable;
 import java.util.Date;
 
@@ -9,16 +11,22 @@ public class SysIndustry extends Entity implements Serializable {
 
     private String name;
 
+    @JsonIgnore
     private Integer status;
 
+    @JsonIgnore
     private String lastModifyBy;
 
+    @JsonIgnore
     private Date lastModifyDate;
 
+    @JsonIgnore
     private String createBy;
 
+    @JsonIgnore
     private Date createDate;
 
+    @JsonIgnore
     private String remarks;
 
     private static final long serialVersionUID = 1L;

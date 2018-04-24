@@ -235,283 +235,283 @@ public class SysUserExample {
             return (Criteria) this;
         }
 
-        public Criteria andCpmpanyMailIsNull() {
-            addCriterion("CPMPANY_MAIL is null");
+        public Criteria andCompanyMailIsNull() {
+            addCriterion("COMPANY_MAIL is null");
             return (Criteria) this;
         }
 
-        public Criteria andCpmpanyMailIsNotNull() {
-            addCriterion("CPMPANY_MAIL is not null");
+        public Criteria andCompanyMailIsNotNull() {
+            addCriterion("COMPANY_MAIL is not null");
             return (Criteria) this;
         }
 
-        public Criteria andCpmpanyMailEqualTo(String value) {
-            addCriterion("CPMPANY_MAIL =", value, "cpmpanyMail");
+        public Criteria andCompanyMailEqualTo(String value) {
+            addCriterion("COMPANY_MAIL =", value, "companyMail");
             return (Criteria) this;
         }
 
-        public Criteria andCpmpanyMailNotEqualTo(String value) {
-            addCriterion("CPMPANY_MAIL <>", value, "cpmpanyMail");
+        public Criteria andCompanyMailNotEqualTo(String value) {
+            addCriterion("COMPANY_MAIL <>", value, "companyMail");
             return (Criteria) this;
         }
 
-        public Criteria andCpmpanyMailGreaterThan(String value) {
-            addCriterion("CPMPANY_MAIL >", value, "cpmpanyMail");
+        public Criteria andCompanyMailGreaterThan(String value) {
+            addCriterion("COMPANY_MAIL >", value, "companyMail");
             return (Criteria) this;
         }
 
-        public Criteria andCpmpanyMailGreaterThanOrEqualTo(String value) {
-            addCriterion("CPMPANY_MAIL >=", value, "cpmpanyMail");
+        public Criteria andCompanyMailGreaterThanOrEqualTo(String value) {
+            addCriterion("COMPANY_MAIL >=", value, "companyMail");
             return (Criteria) this;
         }
 
-        public Criteria andCpmpanyMailLessThan(String value) {
-            addCriterion("CPMPANY_MAIL <", value, "cpmpanyMail");
+        public Criteria andCompanyMailLessThan(String value) {
+            addCriterion("COMPANY_MAIL <", value, "companyMail");
             return (Criteria) this;
         }
 
-        public Criteria andCpmpanyMailLessThanOrEqualTo(String value) {
-            addCriterion("CPMPANY_MAIL <=", value, "cpmpanyMail");
+        public Criteria andCompanyMailLessThanOrEqualTo(String value) {
+            addCriterion("COMPANY_MAIL <=", value, "companyMail");
             return (Criteria) this;
         }
 
-        public Criteria andCpmpanyMailLike(String value) {
-            addCriterion("CPMPANY_MAIL like", value, "cpmpanyMail");
+        public Criteria andCompanyMailLike(String value) {
+            addCriterion("COMPANY_MAIL like", value, "companyMail");
             return (Criteria) this;
         }
 
-        public Criteria andCpmpanyMailNotLike(String value) {
-            addCriterion("CPMPANY_MAIL not like", value, "cpmpanyMail");
+        public Criteria andCompanyMailNotLike(String value) {
+            addCriterion("COMPANY_MAIL not like", value, "companyMail");
             return (Criteria) this;
         }
 
-        public Criteria andCpmpanyMailIn(List<String> values) {
-            addCriterion("CPMPANY_MAIL in", values, "cpmpanyMail");
+        public Criteria andCompanyMailIn(List<String> values) {
+            addCriterion("COMPANY_MAIL in", values, "companyMail");
             return (Criteria) this;
         }
 
-        public Criteria andCpmpanyMailNotIn(List<String> values) {
-            addCriterion("CPMPANY_MAIL not in", values, "cpmpanyMail");
+        public Criteria andCompanyMailNotIn(List<String> values) {
+            addCriterion("COMPANY_MAIL not in", values, "companyMail");
             return (Criteria) this;
         }
 
-        public Criteria andCpmpanyMailBetween(String value1, String value2) {
-            addCriterion("CPMPANY_MAIL between", value1, value2, "cpmpanyMail");
+        public Criteria andCompanyMailBetween(String value1, String value2) {
+            addCriterion("COMPANY_MAIL between", value1, value2, "companyMail");
             return (Criteria) this;
         }
 
-        public Criteria andCpmpanyMailNotBetween(String value1, String value2) {
-            addCriterion("CPMPANY_MAIL not between", value1, value2, "cpmpanyMail");
+        public Criteria andCompanyMailNotBetween(String value1, String value2) {
+            addCriterion("COMPANY_MAIL not between", value1, value2, "companyMail");
             return (Criteria) this;
         }
 
-        public Criteria andCpmpanyAddressIsNull() {
-            addCriterion("CPMPANY_ADDRESS is null");
+        public Criteria andCompanyAddressIsNull() {
+            addCriterion("COMPANY_ADDRESS is null");
             return (Criteria) this;
         }
 
-        public Criteria andCpmpanyAddressIsNotNull() {
-            addCriterion("CPMPANY_ADDRESS is not null");
+        public Criteria andCompanyAddressIsNotNull() {
+            addCriterion("COMPANY_ADDRESS is not null");
             return (Criteria) this;
         }
 
-        public Criteria andCpmpanyAddressEqualTo(String value) {
-            addCriterion("CPMPANY_ADDRESS =", value, "cpmpanyAddress");
+        public Criteria andCompanyAddressEqualTo(String value) {
+            addCriterion("COMPANY_ADDRESS =", value, "companyAddress");
             return (Criteria) this;
         }
 
-        public Criteria andCpmpanyAddressNotEqualTo(String value) {
-            addCriterion("CPMPANY_ADDRESS <>", value, "cpmpanyAddress");
+        public Criteria andCompanyAddressNotEqualTo(String value) {
+            addCriterion("COMPANY_ADDRESS <>", value, "companyAddress");
             return (Criteria) this;
         }
 
-        public Criteria andCpmpanyAddressGreaterThan(String value) {
-            addCriterion("CPMPANY_ADDRESS >", value, "cpmpanyAddress");
+        public Criteria andCompanyAddressGreaterThan(String value) {
+            addCriterion("COMPANY_ADDRESS >", value, "companyAddress");
             return (Criteria) this;
         }
 
-        public Criteria andCpmpanyAddressGreaterThanOrEqualTo(String value) {
-            addCriterion("CPMPANY_ADDRESS >=", value, "cpmpanyAddress");
+        public Criteria andCompanyAddressGreaterThanOrEqualTo(String value) {
+            addCriterion("COMPANY_ADDRESS >=", value, "companyAddress");
             return (Criteria) this;
         }
 
-        public Criteria andCpmpanyAddressLessThan(String value) {
-            addCriterion("CPMPANY_ADDRESS <", value, "cpmpanyAddress");
+        public Criteria andCompanyAddressLessThan(String value) {
+            addCriterion("COMPANY_ADDRESS <", value, "companyAddress");
             return (Criteria) this;
         }
 
-        public Criteria andCpmpanyAddressLessThanOrEqualTo(String value) {
-            addCriterion("CPMPANY_ADDRESS <=", value, "cpmpanyAddress");
+        public Criteria andCompanyAddressLessThanOrEqualTo(String value) {
+            addCriterion("COMPANY_ADDRESS <=", value, "companyAddress");
             return (Criteria) this;
         }
 
-        public Criteria andCpmpanyAddressLike(String value) {
-            addCriterion("CPMPANY_ADDRESS like", value, "cpmpanyAddress");
+        public Criteria andCompanyAddressLike(String value) {
+            addCriterion("COMPANY_ADDRESS like", value, "companyAddress");
             return (Criteria) this;
         }
 
-        public Criteria andCpmpanyAddressNotLike(String value) {
-            addCriterion("CPMPANY_ADDRESS not like", value, "cpmpanyAddress");
+        public Criteria andCompanyAddressNotLike(String value) {
+            addCriterion("COMPANY_ADDRESS not like", value, "companyAddress");
             return (Criteria) this;
         }
 
-        public Criteria andCpmpanyAddressIn(List<String> values) {
-            addCriterion("CPMPANY_ADDRESS in", values, "cpmpanyAddress");
+        public Criteria andCompanyAddressIn(List<String> values) {
+            addCriterion("COMPANY_ADDRESS in", values, "companyAddress");
             return (Criteria) this;
         }
 
-        public Criteria andCpmpanyAddressNotIn(List<String> values) {
-            addCriterion("CPMPANY_ADDRESS not in", values, "cpmpanyAddress");
+        public Criteria andCompanyAddressNotIn(List<String> values) {
+            addCriterion("COMPANY_ADDRESS not in", values, "companyAddress");
             return (Criteria) this;
         }
 
-        public Criteria andCpmpanyAddressBetween(String value1, String value2) {
-            addCriterion("CPMPANY_ADDRESS between", value1, value2, "cpmpanyAddress");
+        public Criteria andCompanyAddressBetween(String value1, String value2) {
+            addCriterion("COMPANY_ADDRESS between", value1, value2, "companyAddress");
             return (Criteria) this;
         }
 
-        public Criteria andCpmpanyAddressNotBetween(String value1, String value2) {
-            addCriterion("CPMPANY_ADDRESS not between", value1, value2, "cpmpanyAddress");
+        public Criteria andCompanyAddressNotBetween(String value1, String value2) {
+            addCriterion("COMPANY_ADDRESS not between", value1, value2, "companyAddress");
             return (Criteria) this;
         }
 
-        public Criteria andCpmpanyPhoneIsNull() {
-            addCriterion("CPMPANY_PHONE is null");
+        public Criteria andCompanyPhoneIsNull() {
+            addCriterion("COMPANY_PHONE is null");
             return (Criteria) this;
         }
 
-        public Criteria andCpmpanyPhoneIsNotNull() {
-            addCriterion("CPMPANY_PHONE is not null");
+        public Criteria andCompanyPhoneIsNotNull() {
+            addCriterion("COMPANY_PHONE is not null");
             return (Criteria) this;
         }
 
-        public Criteria andCpmpanyPhoneEqualTo(String value) {
-            addCriterion("CPMPANY_PHONE =", value, "cpmpanyPhone");
+        public Criteria andCompanyPhoneEqualTo(String value) {
+            addCriterion("COMPANY_PHONE =", value, "companyPhone");
             return (Criteria) this;
         }
 
-        public Criteria andCpmpanyPhoneNotEqualTo(String value) {
-            addCriterion("CPMPANY_PHONE <>", value, "cpmpanyPhone");
+        public Criteria andCompanyPhoneNotEqualTo(String value) {
+            addCriterion("COMPANY_PHONE <>", value, "companyPhone");
             return (Criteria) this;
         }
 
-        public Criteria andCpmpanyPhoneGreaterThan(String value) {
-            addCriterion("CPMPANY_PHONE >", value, "cpmpanyPhone");
+        public Criteria andCompanyPhoneGreaterThan(String value) {
+            addCriterion("COMPANY_PHONE >", value, "companyPhone");
             return (Criteria) this;
         }
 
-        public Criteria andCpmpanyPhoneGreaterThanOrEqualTo(String value) {
-            addCriterion("CPMPANY_PHONE >=", value, "cpmpanyPhone");
+        public Criteria andCompanyPhoneGreaterThanOrEqualTo(String value) {
+            addCriterion("COMPANY_PHONE >=", value, "companyPhone");
             return (Criteria) this;
         }
 
-        public Criteria andCpmpanyPhoneLessThan(String value) {
-            addCriterion("CPMPANY_PHONE <", value, "cpmpanyPhone");
+        public Criteria andCompanyPhoneLessThan(String value) {
+            addCriterion("COMPANY_PHONE <", value, "companyPhone");
             return (Criteria) this;
         }
 
-        public Criteria andCpmpanyPhoneLessThanOrEqualTo(String value) {
-            addCriterion("CPMPANY_PHONE <=", value, "cpmpanyPhone");
+        public Criteria andCompanyPhoneLessThanOrEqualTo(String value) {
+            addCriterion("COMPANY_PHONE <=", value, "companyPhone");
             return (Criteria) this;
         }
 
-        public Criteria andCpmpanyPhoneLike(String value) {
-            addCriterion("CPMPANY_PHONE like", value, "cpmpanyPhone");
+        public Criteria andCompanyPhoneLike(String value) {
+            addCriterion("COMPANY_PHONE like", value, "companyPhone");
             return (Criteria) this;
         }
 
-        public Criteria andCpmpanyPhoneNotLike(String value) {
-            addCriterion("CPMPANY_PHONE not like", value, "cpmpanyPhone");
+        public Criteria andCompanyPhoneNotLike(String value) {
+            addCriterion("COMPANY_PHONE not like", value, "companyPhone");
             return (Criteria) this;
         }
 
-        public Criteria andCpmpanyPhoneIn(List<String> values) {
-            addCriterion("CPMPANY_PHONE in", values, "cpmpanyPhone");
+        public Criteria andCompanyPhoneIn(List<String> values) {
+            addCriterion("COMPANY_PHONE in", values, "companyPhone");
             return (Criteria) this;
         }
 
-        public Criteria andCpmpanyPhoneNotIn(List<String> values) {
-            addCriterion("CPMPANY_PHONE not in", values, "cpmpanyPhone");
+        public Criteria andCompanyPhoneNotIn(List<String> values) {
+            addCriterion("COMPANY_PHONE not in", values, "companyPhone");
             return (Criteria) this;
         }
 
-        public Criteria andCpmpanyPhoneBetween(String value1, String value2) {
-            addCriterion("CPMPANY_PHONE between", value1, value2, "cpmpanyPhone");
+        public Criteria andCompanyPhoneBetween(String value1, String value2) {
+            addCriterion("COMPANY_PHONE between", value1, value2, "companyPhone");
             return (Criteria) this;
         }
 
-        public Criteria andCpmpanyPhoneNotBetween(String value1, String value2) {
-            addCriterion("CPMPANY_PHONE not between", value1, value2, "cpmpanyPhone");
+        public Criteria andCompanyPhoneNotBetween(String value1, String value2) {
+            addCriterion("COMPANY_PHONE not between", value1, value2, "companyPhone");
             return (Criteria) this;
         }
 
-        public Criteria andCpmpanyNameIsNull() {
-            addCriterion("CPMPANY_NAME is null");
+        public Criteria andCompanyNameIsNull() {
+            addCriterion("COMPANY_NAME is null");
             return (Criteria) this;
         }
 
-        public Criteria andCpmpanyNameIsNotNull() {
-            addCriterion("CPMPANY_NAME is not null");
+        public Criteria andCompanyNameIsNotNull() {
+            addCriterion("COMPANY_NAME is not null");
             return (Criteria) this;
         }
 
-        public Criteria andCpmpanyNameEqualTo(String value) {
-            addCriterion("CPMPANY_NAME =", value, "cpmpanyName");
+        public Criteria andCompanyNameEqualTo(String value) {
+            addCriterion("COMPANY_NAME =", value, "companyName");
             return (Criteria) this;
         }
 
-        public Criteria andCpmpanyNameNotEqualTo(String value) {
-            addCriterion("CPMPANY_NAME <>", value, "cpmpanyName");
+        public Criteria andCompanyNameNotEqualTo(String value) {
+            addCriterion("COMPANY_NAME <>", value, "companyName");
             return (Criteria) this;
         }
 
-        public Criteria andCpmpanyNameGreaterThan(String value) {
-            addCriterion("CPMPANY_NAME >", value, "cpmpanyName");
+        public Criteria andCompanyNameGreaterThan(String value) {
+            addCriterion("COMPANY_NAME >", value, "companyName");
             return (Criteria) this;
         }
 
-        public Criteria andCpmpanyNameGreaterThanOrEqualTo(String value) {
-            addCriterion("CPMPANY_NAME >=", value, "cpmpanyName");
+        public Criteria andCompanyNameGreaterThanOrEqualTo(String value) {
+            addCriterion("COMPANY_NAME >=", value, "companyName");
             return (Criteria) this;
         }
 
-        public Criteria andCpmpanyNameLessThan(String value) {
-            addCriterion("CPMPANY_NAME <", value, "cpmpanyName");
+        public Criteria andCompanyNameLessThan(String value) {
+            addCriterion("COMPANY_NAME <", value, "companyName");
             return (Criteria) this;
         }
 
-        public Criteria andCpmpanyNameLessThanOrEqualTo(String value) {
-            addCriterion("CPMPANY_NAME <=", value, "cpmpanyName");
+        public Criteria andCompanyNameLessThanOrEqualTo(String value) {
+            addCriterion("COMPANY_NAME <=", value, "companyName");
             return (Criteria) this;
         }
 
-        public Criteria andCpmpanyNameLike(String value) {
-            addCriterion("CPMPANY_NAME like", value, "cpmpanyName");
+        public Criteria andCompanyNameLike(String value) {
+            addCriterion("COMPANY_NAME like", value, "companyName");
             return (Criteria) this;
         }
 
-        public Criteria andCpmpanyNameNotLike(String value) {
-            addCriterion("CPMPANY_NAME not like", value, "cpmpanyName");
+        public Criteria andCompanyNameNotLike(String value) {
+            addCriterion("COMPANY_NAME not like", value, "companyName");
             return (Criteria) this;
         }
 
-        public Criteria andCpmpanyNameIn(List<String> values) {
-            addCriterion("CPMPANY_NAME in", values, "cpmpanyName");
+        public Criteria andCompanyNameIn(List<String> values) {
+            addCriterion("COMPANY_NAME in", values, "companyName");
             return (Criteria) this;
         }
 
-        public Criteria andCpmpanyNameNotIn(List<String> values) {
-            addCriterion("CPMPANY_NAME not in", values, "cpmpanyName");
+        public Criteria andCompanyNameNotIn(List<String> values) {
+            addCriterion("COMPANY_NAME not in", values, "companyName");
             return (Criteria) this;
         }
 
-        public Criteria andCpmpanyNameBetween(String value1, String value2) {
-            addCriterion("CPMPANY_NAME between", value1, value2, "cpmpanyName");
+        public Criteria andCompanyNameBetween(String value1, String value2) {
+            addCriterion("COMPANY_NAME between", value1, value2, "companyName");
             return (Criteria) this;
         }
 
-        public Criteria andCpmpanyNameNotBetween(String value1, String value2) {
-            addCriterion("CPMPANY_NAME not between", value1, value2, "cpmpanyName");
+        public Criteria andCompanyNameNotBetween(String value1, String value2) {
+            addCriterion("COMPANY_NAME not between", value1, value2, "companyName");
             return (Criteria) this;
         }
 
@@ -2042,6 +2042,76 @@ public class SysUserExample {
 
         public Criteria andSaltNotBetween(String value1, String value2) {
             addCriterion("SALT not between", value1, value2, "salt");
+            return (Criteria) this;
+        }
+
+        public Criteria andOpenIdIsNull() {
+            addCriterion("OPEN_ID is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andOpenIdIsNotNull() {
+            addCriterion("OPEN_ID is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andOpenIdEqualTo(String value) {
+            addCriterion("OPEN_ID =", value, "openId");
+            return (Criteria) this;
+        }
+
+        public Criteria andOpenIdNotEqualTo(String value) {
+            addCriterion("OPEN_ID <>", value, "openId");
+            return (Criteria) this;
+        }
+
+        public Criteria andOpenIdGreaterThan(String value) {
+            addCriterion("OPEN_ID >", value, "openId");
+            return (Criteria) this;
+        }
+
+        public Criteria andOpenIdGreaterThanOrEqualTo(String value) {
+            addCriterion("OPEN_ID >=", value, "openId");
+            return (Criteria) this;
+        }
+
+        public Criteria andOpenIdLessThan(String value) {
+            addCriterion("OPEN_ID <", value, "openId");
+            return (Criteria) this;
+        }
+
+        public Criteria andOpenIdLessThanOrEqualTo(String value) {
+            addCriterion("OPEN_ID <=", value, "openId");
+            return (Criteria) this;
+        }
+
+        public Criteria andOpenIdLike(String value) {
+            addCriterion("OPEN_ID like", value, "openId");
+            return (Criteria) this;
+        }
+
+        public Criteria andOpenIdNotLike(String value) {
+            addCriterion("OPEN_ID not like", value, "openId");
+            return (Criteria) this;
+        }
+
+        public Criteria andOpenIdIn(List<String> values) {
+            addCriterion("OPEN_ID in", values, "openId");
+            return (Criteria) this;
+        }
+
+        public Criteria andOpenIdNotIn(List<String> values) {
+            addCriterion("OPEN_ID not in", values, "openId");
+            return (Criteria) this;
+        }
+
+        public Criteria andOpenIdBetween(String value1, String value2) {
+            addCriterion("OPEN_ID between", value1, value2, "openId");
+            return (Criteria) this;
+        }
+
+        public Criteria andOpenIdNotBetween(String value1, String value2) {
+            addCriterion("OPEN_ID not between", value1, value2, "openId");
             return (Criteria) this;
         }
     }

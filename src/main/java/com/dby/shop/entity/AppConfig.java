@@ -4,7 +4,10 @@ import com.dby.shop.config.base.Entity;
 import java.io.Serializable;
 import java.util.Date;
 
-public class AppConfig extends Entity implements Serializable {
+/**
+ * @author mitnick
+ */
+public class AppConfig implements Serializable {
     private Integer id;
 
     private String openId;

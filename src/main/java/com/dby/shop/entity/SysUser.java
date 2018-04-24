@@ -9,13 +9,13 @@ public class SysUser extends Entity implements Serializable {
 
     private String loginName;
 
-    private String cpmpanyMail;
+    private String companyMail;
 
-    private String cpmpanyAddress;
+    private String companyAddress;
 
-    private String cpmpanyPhone;
+    private String companyPhone;
 
-    private String cpmpanyName;
+    private String companyName;
 
     private Integer industry;
 
@@ -63,6 +63,8 @@ public class SysUser extends Entity implements Serializable {
 
     private String salt;
 
+    private String openId;
+
     private static final long serialVersionUID = 1L;
 
     public Integer getId() {
@@ -81,36 +83,36 @@ public class SysUser extends Entity implements Serializable {
         this.loginName = loginName;
     }
 
-    public String getCpmpanyMail() {
-        return cpmpanyMail;
+    public String getCompanyMail() {
+        return companyMail;
     }
 
-    public void setCpmpanyMail(String cpmpanyMail) {
-        this.cpmpanyMail = cpmpanyMail;
+    public void setCompanyMail(String companyMail) {
+        this.companyMail = companyMail;
     }
 
-    public String getCpmpanyAddress() {
-        return cpmpanyAddress;
+    public String getCompanyAddress() {
+        return companyAddress;
     }
 
-    public void setCpmpanyAddress(String cpmpanyAddress) {
-        this.cpmpanyAddress = cpmpanyAddress;
+    public void setCompanyAddress(String companyAddress) {
+        this.companyAddress = companyAddress;
     }
 
-    public String getCpmpanyPhone() {
-        return cpmpanyPhone;
+    public String getCompanyPhone() {
+        return companyPhone;
     }
 
-    public void setCpmpanyPhone(String cpmpanyPhone) {
-        this.cpmpanyPhone = cpmpanyPhone;
+    public void setCompanyPhone(String companyPhone) {
+        this.companyPhone = companyPhone;
     }
 
-    public String getCpmpanyName() {
-        return cpmpanyName;
+    public String getCompanyName() {
+        return companyName;
     }
 
-    public void setCpmpanyName(String cpmpanyName) {
-        this.cpmpanyName = cpmpanyName;
+    public void setCompanyName(String companyName) {
+        this.companyName = companyName;
     }
 
     public Integer getIndustry() {
@@ -297,6 +299,14 @@ public class SysUser extends Entity implements Serializable {
         this.salt = salt;
     }
 
+    public String getOpenId() {
+        return openId;
+    }
+
+    public void setOpenId(String openId) {
+        this.openId = openId;
+    }
+
     @Override
     public boolean equals(Object that) {
         if (this == that) {
@@ -311,10 +321,10 @@ public class SysUser extends Entity implements Serializable {
         SysUser other = (SysUser) that;
         return (this.getId() == null ? other.getId() == null : this.getId().equals(other.getId()))
             && (this.getLoginName() == null ? other.getLoginName() == null : this.getLoginName().equals(other.getLoginName()))
-            && (this.getCpmpanyMail() == null ? other.getCpmpanyMail() == null : this.getCpmpanyMail().equals(other.getCpmpanyMail()))
-            && (this.getCpmpanyAddress() == null ? other.getCpmpanyAddress() == null : this.getCpmpanyAddress().equals(other.getCpmpanyAddress()))
-            && (this.getCpmpanyPhone() == null ? other.getCpmpanyPhone() == null : this.getCpmpanyPhone().equals(other.getCpmpanyPhone()))
-            && (this.getCpmpanyName() == null ? other.getCpmpanyName() == null : this.getCpmpanyName().equals(other.getCpmpanyName()))
+            && (this.getCompanyMail() == null ? other.getCompanyMail() == null : this.getCompanyMail().equals(other.getCompanyMail()))
+            && (this.getCompanyAddress() == null ? other.getCompanyAddress() == null : this.getCompanyAddress().equals(other.getCompanyAddress()))
+            && (this.getCompanyPhone() == null ? other.getCompanyPhone() == null : this.getCompanyPhone().equals(other.getCompanyPhone()))
+            && (this.getCompanyName() == null ? other.getCompanyName() == null : this.getCompanyName().equals(other.getCompanyName()))
             && (this.getIndustry() == null ? other.getIndustry() == null : this.getIndustry().equals(other.getIndustry()))
             && (this.getContactMail() == null ? other.getContactMail() == null : this.getContactMail().equals(other.getContactMail()))
             && (this.getContactPhone() == null ? other.getContactPhone() == null : this.getContactPhone().equals(other.getContactPhone()))
@@ -337,7 +347,8 @@ public class SysUser extends Entity implements Serializable {
             && (this.getCreateBy() == null ? other.getCreateBy() == null : this.getCreateBy().equals(other.getCreateBy()))
             && (this.getCreateDate() == null ? other.getCreateDate() == null : this.getCreateDate().equals(other.getCreateDate()))
             && (this.getRemarks() == null ? other.getRemarks() == null : this.getRemarks().equals(other.getRemarks()))
-            && (this.getSalt() == null ? other.getSalt() == null : this.getSalt().equals(other.getSalt()));
+            && (this.getSalt() == null ? other.getSalt() == null : this.getSalt().equals(other.getSalt()))
+            && (this.getOpenId() == null ? other.getOpenId() == null : this.getOpenId().equals(other.getOpenId()));
     }
 
     @Override
@@ -346,10 +357,10 @@ public class SysUser extends Entity implements Serializable {
         int result = 1;
         result = prime * result + ((getId() == null) ? 0 : getId().hashCode());
         result = prime * result + ((getLoginName() == null) ? 0 : getLoginName().hashCode());
-        result = prime * result + ((getCpmpanyMail() == null) ? 0 : getCpmpanyMail().hashCode());
-        result = prime * result + ((getCpmpanyAddress() == null) ? 0 : getCpmpanyAddress().hashCode());
-        result = prime * result + ((getCpmpanyPhone() == null) ? 0 : getCpmpanyPhone().hashCode());
-        result = prime * result + ((getCpmpanyName() == null) ? 0 : getCpmpanyName().hashCode());
+        result = prime * result + ((getCompanyMail() == null) ? 0 : getCompanyMail().hashCode());
+        result = prime * result + ((getCompanyAddress() == null) ? 0 : getCompanyAddress().hashCode());
+        result = prime * result + ((getCompanyPhone() == null) ? 0 : getCompanyPhone().hashCode());
+        result = prime * result + ((getCompanyName() == null) ? 0 : getCompanyName().hashCode());
         result = prime * result + ((getIndustry() == null) ? 0 : getIndustry().hashCode());
         result = prime * result + ((getContactMail() == null) ? 0 : getContactMail().hashCode());
         result = prime * result + ((getContactPhone() == null) ? 0 : getContactPhone().hashCode());
@@ -373,6 +384,7 @@ public class SysUser extends Entity implements Serializable {
         result = prime * result + ((getCreateDate() == null) ? 0 : getCreateDate().hashCode());
         result = prime * result + ((getRemarks() == null) ? 0 : getRemarks().hashCode());
         result = prime * result + ((getSalt() == null) ? 0 : getSalt().hashCode());
+        result = prime * result + ((getOpenId() == null) ? 0 : getOpenId().hashCode());
         return result;
     }
 
@@ -384,10 +396,10 @@ public class SysUser extends Entity implements Serializable {
         sb.append("Hash = ").append(hashCode());
         sb.append(", id=").append(id);
         sb.append(", loginName=").append(loginName);
-        sb.append(", cpmpanyMail=").append(cpmpanyMail);
-        sb.append(", cpmpanyAddress=").append(cpmpanyAddress);
-        sb.append(", cpmpanyPhone=").append(cpmpanyPhone);
-        sb.append(", cpmpanyName=").append(cpmpanyName);
+        sb.append(", companyMail=").append(companyMail);
+        sb.append(", companyAddress=").append(companyAddress);
+        sb.append(", companyPhone=").append(companyPhone);
+        sb.append(", companyName=").append(companyName);
         sb.append(", industry=").append(industry);
         sb.append(", contactMail=").append(contactMail);
         sb.append(", contactPhone=").append(contactPhone);
@@ -411,6 +423,7 @@ public class SysUser extends Entity implements Serializable {
         sb.append(", createDate=").append(createDate);
         sb.append(", remarks=").append(remarks);
         sb.append(", salt=").append(salt);
+        sb.append(", openId=").append(openId);
         sb.append(", serialVersionUID=").append(serialVersionUID);
         sb.append("]");
         return sb.toString();

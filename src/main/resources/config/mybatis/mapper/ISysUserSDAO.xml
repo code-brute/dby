@@ -4,10 +4,10 @@
   <resultMap id="BaseResultMap" type="com.dby.shop.entity.SysUser">
     <id column="ID" jdbcType="INTEGER" property="id" />
     <result column="LOGIN_NAME" jdbcType="VARCHAR" property="loginName" />
-    <result column="CPMPANY_MAIL" jdbcType="VARCHAR" property="cpmpanyMail" />
-    <result column="CPMPANY_ADDRESS" jdbcType="VARCHAR" property="cpmpanyAddress" />
-    <result column="CPMPANY_PHONE" jdbcType="VARCHAR" property="cpmpanyPhone" />
-    <result column="CPMPANY_NAME" jdbcType="VARCHAR" property="cpmpanyName" />
+    <result column="COMPANY_MAIL" jdbcType="VARCHAR" property="companyMail" />
+    <result column="COMPANY_ADDRESS" jdbcType="VARCHAR" property="companyAddress" />
+    <result column="COMPANY_PHONE" jdbcType="VARCHAR" property="companyPhone" />
+    <result column="COMPANY_NAME" jdbcType="VARCHAR" property="companyName" />
     <result column="INDUSTRY" jdbcType="INTEGER" property="industry" />
     <result column="CONTACT_MAIL" jdbcType="VARCHAR" property="contactMail" />
     <result column="CONTACT_PHONE" jdbcType="VARCHAR" property="contactPhone" />
@@ -31,6 +31,7 @@
     <result column="CREATE_DATE" jdbcType="TIMESTAMP" property="createDate" />
     <result column="REMARKS" jdbcType="VARCHAR" property="remarks" />
     <result column="SALT" jdbcType="VARCHAR" property="salt" />
+    <result column="OPEN_ID" jdbcType="VARCHAR" property="openId" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -91,11 +92,11 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    ID, LOGIN_NAME, CPMPANY_MAIL, CPMPANY_ADDRESS, CPMPANY_PHONE, CPMPANY_NAME, INDUSTRY, 
+    ID, LOGIN_NAME, COMPANY_MAIL, COMPANY_ADDRESS, COMPANY_PHONE, COMPANY_NAME, INDUSTRY, 
     CONTACT_MAIL, CONTACT_PHONE, CONTACT_NAME, STORE_NAME, STORE_PHOTO, CHECKOUT_COUNTER_PHOTO, 
     BUSINESS_LICENSE_PHOTO, STORE_PHONE, BUSINESS_TIME, STATUS, PASSWORD, USER_TYPE, 
     PWD_SET_TIME, PWD_INACTIVE_TIME, LAST_PWD, INIT_PWD_FLAG, LAST_MODIFY_BY, LAST_MODIFY_DATE, 
-    CREATE_BY, CREATE_DATE, REMARKS, SALT
+    CREATE_BY, CREATE_DATE, REMARKS, SALT, OPEN_ID
   </sql>
   <select id="selectByExample" parameterType="com.dby.shop.entity.SysUserExample" resultMap="BaseResultMap">
     select
@@ -128,8 +129,8 @@
     </if>
   </delete>
   <insert id="insert" keyColumn="ID" keyProperty="id" parameterType="com.dby.shop.entity.SysUser" useGeneratedKeys="true">
-    insert into SYS_USER (LOGIN_NAME, CPMPANY_MAIL, CPMPANY_ADDRESS, 
-      CPMPANY_PHONE, CPMPANY_NAME, INDUSTRY, 
+    insert into SYS_USER (LOGIN_NAME, COMPANY_MAIL, COMPANY_ADDRESS, 
+      COMPANY_PHONE, COMPANY_NAME, INDUSTRY, 
       CONTACT_MAIL, CONTACT_PHONE, CONTACT_NAME, 
       STORE_NAME, STORE_PHOTO, CHECKOUT_COUNTER_PHOTO, 
       BUSINESS_LICENSE_PHOTO, STORE_PHONE, BUSINESS_TIME, 
@@ -137,9 +138,9 @@
       PWD_SET_TIME, PWD_INACTIVE_TIME, LAST_PWD, 
       INIT_PWD_FLAG, LAST_MODIFY_BY, LAST_MODIFY_DATE, 
       CREATE_BY, CREATE_DATE, REMARKS, 
-      SALT)
-    values (#{loginName,jdbcType=VARCHAR}, #{cpmpanyMail,jdbcType=VARCHAR}, #{cpmpanyAddress,jdbcType=VARCHAR}, 
-      #{cpmpanyPhone,jdbcType=VARCHAR}, #{cpmpanyName,jdbcType=VARCHAR}, #{industry,jdbcType=INTEGER}, 
+      SALT, OPEN_ID)
+    values (#{loginName,jdbcType=VARCHAR}, #{companyMail,jdbcType=VARCHAR}, #{companyAddress,jdbcType=VARCHAR}, 
+      #{companyPhone,jdbcType=VARCHAR}, #{companyName,jdbcType=VARCHAR}, #{industry,jdbcType=INTEGER}, 
       #{contactMail,jdbcType=VARCHAR}, #{contactPhone,jdbcType=VARCHAR}, #{contactName,jdbcType=VARCHAR}, 
       #{storeName,jdbcType=VARCHAR}, #{storePhoto,jdbcType=VARCHAR}, #{checkoutCounterPhoto,jdbcType=VARCHAR}, 
       #{businessLicensePhoto,jdbcType=VARCHAR}, #{storePhone,jdbcType=VARCHAR}, #{businessTime,jdbcType=VARCHAR}, 
@@ -147,7 +148,7 @@
       #{pwdSetTime,jdbcType=TIMESTAMP}, #{pwdInactiveTime,jdbcType=TIMESTAMP}, #{lastPwd,jdbcType=VARCHAR}, 
       #{initPwdFlag,jdbcType=INTEGER}, #{lastModifyBy,jdbcType=VARCHAR}, #{lastModifyDate,jdbcType=TIMESTAMP}, 
       #{createBy,jdbcType=VARCHAR}, #{createDate,jdbcType=TIMESTAMP}, #{remarks,jdbcType=VARCHAR}, 
-      #{salt,jdbcType=VARCHAR})
+      #{salt,jdbcType=VARCHAR}, #{openId,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" keyColumn="ID" keyProperty="id" parameterType="com.dby.shop.entity.SysUser" useGeneratedKeys="true">
     insert into SYS_USER
@@ -155,17 +156,17 @@
       <if test="loginName != null">
         LOGIN_NAME,
       </if>
-      <if test="cpmpanyMail != null">
-        CPMPANY_MAIL,
+      <if test="companyMail != null">
+        COMPANY_MAIL,
       </if>
-      <if test="cpmpanyAddress != null">
-        CPMPANY_ADDRESS,
+      <if test="companyAddress != null">
+        COMPANY_ADDRESS,
       </if>
-      <if test="cpmpanyPhone != null">
-        CPMPANY_PHONE,
+      <if test="companyPhone != null">
+        COMPANY_PHONE,
       </if>
-      <if test="cpmpanyName != null">
-        CPMPANY_NAME,
+      <if test="companyName != null">
+        COMPANY_NAME,
       </if>
       <if test="industry != null">
         INDUSTRY,
@@ -236,22 +237,25 @@
       <if test="salt != null">
         SALT,
       </if>
+      <if test="openId != null">
+        OPEN_ID,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="loginName != null">
         #{loginName,jdbcType=VARCHAR},
       </if>
-      <if test="cpmpanyMail != null">
-        #{cpmpanyMail,jdbcType=VARCHAR},
+      <if test="companyMail != null">
+        #{companyMail,jdbcType=VARCHAR},
       </if>
-      <if test="cpmpanyAddress != null">
-        #{cpmpanyAddress,jdbcType=VARCHAR},
+      <if test="companyAddress != null">
+        #{companyAddress,jdbcType=VARCHAR},
       </if>
-      <if test="cpmpanyPhone != null">
-        #{cpmpanyPhone,jdbcType=VARCHAR},
+      <if test="companyPhone != null">
+        #{companyPhone,jdbcType=VARCHAR},
       </if>
-      <if test="cpmpanyName != null">
-        #{cpmpanyName,jdbcType=VARCHAR},
+      <if test="companyName != null">
+        #{companyName,jdbcType=VARCHAR},
       </if>
       <if test="industry != null">
         #{industry,jdbcType=INTEGER},
@@ -322,6 +326,9 @@
       <if test="salt != null">
         #{salt,jdbcType=VARCHAR},
       </if>
+      <if test="openId != null">
+        #{openId,jdbcType=VARCHAR},
+      </if>
     </trim>
   </insert>
   <select id="countByExample" parameterType="com.dby.shop.entity.SysUserExample" resultType="java.lang.Long">
@@ -339,17 +346,17 @@
       <if test="record.loginName != null">
         LOGIN_NAME = #{record.loginName,jdbcType=VARCHAR},
       </if>
-      <if test="record.cpmpanyMail != null">
-        CPMPANY_MAIL = #{record.cpmpanyMail,jdbcType=VARCHAR},
+      <if test="record.companyMail != null">
+        COMPANY_MAIL = #{record.companyMail,jdbcType=VARCHAR},
       </if>
-      <if test="record.cpmpanyAddress != null">
-        CPMPANY_ADDRESS = #{record.cpmpanyAddress,jdbcType=VARCHAR},
+      <if test="record.companyAddress != null">
+        COMPANY_ADDRESS = #{record.companyAddress,jdbcType=VARCHAR},
       </if>
-      <if test="record.cpmpanyPhone != null">
-        CPMPANY_PHONE = #{record.cpmpanyPhone,jdbcType=VARCHAR},
+      <if test="record.companyPhone != null">
+        COMPANY_PHONE = #{record.companyPhone,jdbcType=VARCHAR},
       </if>
-      <if test="record.cpmpanyName != null">
-        CPMPANY_NAME = #{record.cpmpanyName,jdbcType=VARCHAR},
+      <if test="record.companyName != null">
+        COMPANY_NAME = #{record.companyName,jdbcType=VARCHAR},
       </if>
       <if test="record.industry != null">
         INDUSTRY = #{record.industry,jdbcType=INTEGER},
@@ -420,6 +427,9 @@
       <if test="record.salt != null">
         SALT = #{record.salt,jdbcType=VARCHAR},
       </if>
+      <if test="record.openId != null">
+        OPEN_ID = #{record.openId,jdbcType=VARCHAR},
+      </if>
     </set>
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
@@ -429,10 +439,10 @@
     update SYS_USER
     set ID = #{record.id,jdbcType=INTEGER},
       LOGIN_NAME = #{record.loginName,jdbcType=VARCHAR},
-      CPMPANY_MAIL = #{record.cpmpanyMail,jdbcType=VARCHAR},
-      CPMPANY_ADDRESS = #{record.cpmpanyAddress,jdbcType=VARCHAR},
-      CPMPANY_PHONE = #{record.cpmpanyPhone,jdbcType=VARCHAR},
-      CPMPANY_NAME = #{record.cpmpanyName,jdbcType=VARCHAR},
+      COMPANY_MAIL = #{record.companyMail,jdbcType=VARCHAR},
+      COMPANY_ADDRESS = #{record.companyAddress,jdbcType=VARCHAR},
+      COMPANY_PHONE = #{record.companyPhone,jdbcType=VARCHAR},
+      COMPANY_NAME = #{record.companyName,jdbcType=VARCHAR},
       INDUSTRY = #{record.industry,jdbcType=INTEGER},
       CONTACT_MAIL = #{record.contactMail,jdbcType=VARCHAR},
       CONTACT_PHONE = #{record.contactPhone,jdbcType=VARCHAR},
@@ -455,7 +465,8 @@
       CREATE_BY = #{record.createBy,jdbcType=VARCHAR},
       CREATE_DATE = #{record.createDate,jdbcType=TIMESTAMP},
       REMARKS = #{record.remarks,jdbcType=VARCHAR},
-      SALT = #{record.salt,jdbcType=VARCHAR}
+      SALT = #{record.salt,jdbcType=VARCHAR},
+      OPEN_ID = #{record.openId,jdbcType=VARCHAR}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -466,17 +477,17 @@
       <if test="loginName != null">
         LOGIN_NAME = #{loginName,jdbcType=VARCHAR},
       </if>
-      <if test="cpmpanyMail != null">
-        CPMPANY_MAIL = #{cpmpanyMail,jdbcType=VARCHAR},
+      <if test="companyMail != null">
+        COMPANY_MAIL = #{companyMail,jdbcType=VARCHAR},
       </if>
-      <if test="cpmpanyAddress != null">
-        CPMPANY_ADDRESS = #{cpmpanyAddress,jdbcType=VARCHAR},
+      <if test="companyAddress != null">
+        COMPANY_ADDRESS = #{companyAddress,jdbcType=VARCHAR},
       </if>
-      <if test="cpmpanyPhone != null">
-        CPMPANY_PHONE = #{cpmpanyPhone,jdbcType=VARCHAR},
+      <if test="companyPhone != null">
+        COMPANY_PHONE = #{companyPhone,jdbcType=VARCHAR},
       </if>
-      <if test="cpmpanyName != null">
-        CPMPANY_NAME = #{cpmpanyName,jdbcType=VARCHAR},
+      <if test="companyName != null">
+        COMPANY_NAME = #{companyName,jdbcType=VARCHAR},
       </if>
       <if test="industry != null">
         INDUSTRY = #{industry,jdbcType=INTEGER},
@@ -547,16 +558,19 @@
       <if test="salt != null">
         SALT = #{salt,jdbcType=VARCHAR},
       </if>
+      <if test="openId != null">
+        OPEN_ID = #{openId,jdbcType=VARCHAR},
+      </if>
     </set>
     where ID = #{id,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.dby.shop.entity.SysUser">
     update SYS_USER
     set LOGIN_NAME = #{loginName,jdbcType=VARCHAR},
-      CPMPANY_MAIL = #{cpmpanyMail,jdbcType=VARCHAR},
-      CPMPANY_ADDRESS = #{cpmpanyAddress,jdbcType=VARCHAR},
-      CPMPANY_PHONE = #{cpmpanyPhone,jdbcType=VARCHAR},
-      CPMPANY_NAME = #{cpmpanyName,jdbcType=VARCHAR},
+      COMPANY_MAIL = #{companyMail,jdbcType=VARCHAR},
+      COMPANY_ADDRESS = #{companyAddress,jdbcType=VARCHAR},
+      COMPANY_PHONE = #{companyPhone,jdbcType=VARCHAR},
+      COMPANY_NAME = #{companyName,jdbcType=VARCHAR},
       INDUSTRY = #{industry,jdbcType=INTEGER},
       CONTACT_MAIL = #{contactMail,jdbcType=VARCHAR},
       CONTACT_PHONE = #{contactPhone,jdbcType=VARCHAR},
@@ -579,7 +593,8 @@
       CREATE_BY = #{createBy,jdbcType=VARCHAR},
       CREATE_DATE = #{createDate,jdbcType=TIMESTAMP},
       REMARKS = #{remarks,jdbcType=VARCHAR},
-      SALT = #{salt,jdbcType=VARCHAR}
+      SALT = #{salt,jdbcType=VARCHAR},
+      OPEN_ID = #{openId,jdbcType=VARCHAR}
     where ID = #{id,jdbcType=INTEGER}
   </update>
 </mapper>

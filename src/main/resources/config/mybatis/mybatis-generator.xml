@@ -56,7 +56,7 @@
         11，enableCountByExample（默认true）：MyBatis3Simple为false，指定是否生成动态查询总条数语句（用于分页的总条数查询）；
         12，enableUpdateByExample（默认true）：MyBatis3Simple为false，指定是否生成动态修改语句（只修改对象中不为空的属性）；  -->
 
-        <table tableName="SYS_CONFIG"
+      <!--  <table tableName="SYS_CONFIG"
                domainObjectName="SysConfig"
                mapperName="ISysConfigSDAO"
         >
@@ -77,6 +77,18 @@
         <table tableName="SYS_USER"
                domainObjectName="SysUser"
                mapperName="ISysUserSDAO"
+        >
+            <generatedKey column="ID" sqlStatement="JDBC"/>
+        </table>
+        <table tableName="ADDRESS"
+               domainObjectName="Address"
+               mapperName="IAddressSDAO"
+        >
+            <generatedKey column="ID" sqlStatement="JDBC"/>
+        </table>-->
+        <table tableName="DEVICE_HARDWARE"
+               domainObjectName="DeviceHardware"
+               mapperName="IDeviceHardwareSDAO"
         >
             <generatedKey column="ID" sqlStatement="JDBC"/>
         </table>

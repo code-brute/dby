@@ -6,7 +6,7 @@ spring:
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     driverClassName: com.mysql.jdbc.Driver
-    url: jdbc:mysql://192.168.2.221:3306/dby?characterEncoding=UTF-8
+    url: jdbc:mysql://192.168.0.119:3306/dby?characterEncoding=UTF-8
     username: root
     password: root
     initialSize: 5
@@ -37,7 +37,7 @@ system:
     limit: true # 是否开启登陆失败次数限制
     captchaEnable: true # 是否开启验证码
     retryCount: 5 #登录失败最大次数
-  upload: /Users/mitnick/company/upload/
+  upload: /Users/mitnick/code/upload/
 
   security:
      spring-session-open: false # 是否开启spring session 如果是多机环境需要开启 true ／false
